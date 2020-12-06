@@ -3,5 +3,4 @@ venv
 staticfiles
 *.env
 env
-*.sqlite3
 /frontend/node_modules
