@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.shortcuts import render
 
 
@@ -9,5 +9,6 @@ def index(request, *args, **kwargs):
 
 # urls here
 urlpatterns = [
+    re_path(r'^(?P<path>.*)/$', index),
     path('', index),
 ]
