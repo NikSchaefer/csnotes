@@ -6,24 +6,24 @@ const datasets: string[][] = [
     ['Dataset', 'cpath'],
 ]
 
-function ShowDatasets(props: { array: string[][] }): any {
+export function ShowDatasets(props: { array: string[][], class:string }): any {
     let out: any[] = []
     for (let i: number = 0; i < props.array.length; i++) {
-        out.push(<NavLink key={props.array[i][1]} className='dataset-link' to={props.array[i][1]}>{props.array[i][0]}</NavLink>)
+        out.push(<NavLink key={props.array[i][1]} className={props.class} to={`datasets/${props.array[i][1]}`}>{props.array[i][0]}</NavLink>)
     }
     return out
 }
 
 export default function Home() {
     return (
-        <div className='page'>
+        <div>
             <div className='home-colored'>
                 <h1>CS Notes</h1>
                 <p>A site dedicated to datasets of cs notes</p>
             </div>
             <div className='home-div'>
                 <div className='dataset-div'>
-                    <ShowDatasets array={datasets} />
+                    <ShowDatasets array={datasets} class='dataset-link' />
                     <NavLink className='dataset-view' to='/notes'>View More</NavLink>
                 </div>
                 <h1>Datasets</h1>

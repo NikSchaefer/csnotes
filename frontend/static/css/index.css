@@ -97,6 +97,7 @@ h1 {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    height: 400px;
 }
 
 .home-colored>p {
@@ -107,10 +108,6 @@ h1 {
     height: 600px;
     color: white;
     background-color: var(--dark-blue);
-}
-
-.home-div {
-    height: 500px;
 }
 
 .home-contribute {
@@ -145,4 +142,16 @@ h1 {
 
 .dataset-link:hover {
     color: var(--blue);
+}
+
+.data-view-white, .data-view-blue {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 110px
+}
+
+.data-view-blue {
+    background-color: var(--dark-blue);
+    color: white;
 }

@@ -8,6 +8,7 @@ import Footer from './footer'
 import Notes from './notes'
 import About from './about'
 import Add from './add'
+import Dataset from './dataset'
 
 function Root() {
     return (
@@ -18,6 +19,7 @@ function Root() {
             <Route path='/about' component={About} />
             <Route path='/notes' component={Notes} />
             <Route path='/add' component={Add} />
+            <Route path="/dataset" component={Dataset} />
             
             <Footer />
         </Router>
