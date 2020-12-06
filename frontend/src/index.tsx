@@ -7,6 +7,7 @@ import Header from './header'
 import Footer from './footer'
 import Notes from './notes'
 import About from './about'
+import Add from './add'
 
 function Root() {
     return (
@@ -16,6 +17,7 @@ function Root() {
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
             <Route path='/notes' component={Notes} />
+            <Route path='/add' component={Add} />
             
             <Footer />
         </Router>
