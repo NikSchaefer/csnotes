@@ -1,20 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-function Header() {
-    return (
-        <header>
-            <NavLink to='/' className='header-link'>Home</NavLink>
-            <NavLink to='/notes' activeClassName='header-link-active' className='header-link'>Notes</NavLink>
-            <NavLink to='/about' activeClassName='header-link-active' className='header-link'>About</NavLink>
-        </header>
-    )
-}
+import Home from './home'
+import Header from './header'
+import Footer from './footer'
 function Root() {
     return (
         <Router>
             <Header />
+            <Route path='/' component={Home} />
+
+            <Footer />
         </Router>
     )
 }

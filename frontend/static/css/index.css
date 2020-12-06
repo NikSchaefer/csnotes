@@ -9,22 +9,41 @@ html, body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
-header {
-    border-bottom: solid rgba(128, 128, 128, 0.322) 1px;
+header, footer {
+    background-color: rgb(70, 88, 255);
     width: 94%;
     padding: 10px 3%;
-    font-size: 22px;
     display: flex;
-    margin-bottom: 50px;
+    color: white;
+    font-size: 18px;
+    align-items: center;
 }
 
-.header-link {
+footer {
+    padding: 20px 3%;
+    justify-content: space-between;
+}
+
+footer>p>a {
+    text-decoration: underline;
+}
+
+footer>p>a:hover {
+    text-decoration: none;
+}
+
+.header-link, .footer-link {
     margin: 5px 10px;
-    color: gray;
+    font-size: 22px;
 }
 
-.header-link-active {
-    color: black;
+.header-link:hover, .footer-link:hover {
+    color: rgba(255, 255, 255, 0.781);
+}
+
+.home {
+    height: 1000px;
 }

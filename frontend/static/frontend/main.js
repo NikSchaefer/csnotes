@@ -9,6 +9,39 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/footer.tsx":
+/*!************************!*
+  !*** ./src/footer.tsx ***!
+  \************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Footer() {\r\n    return (React.createElement(\"footer\", null,\r\n        React.createElement(\"div\", null,\r\n            React.createElement(react_router_dom_1.NavLink, { to: '/', className: 'footer-link' }, \"Home\"),\r\n            React.createElement(react_router_dom_1.NavLink, { to: '/notes', className: 'footer-link' }, \"Notes\"),\r\n            React.createElement(react_router_dom_1.NavLink, { to: '/about', className: 'footer-link' }, \"About\")),\r\n        React.createElement(\"p\", null,\r\n            \"This is an Open source project, learn how to \",\r\n            React.createElement(react_router_dom_1.NavLink, { to: '/about' }, \"contribute\"))));\r\n}\r\nexports.default = Footer;\r\n\n\n//# sourceURL=webpack://frontend/./src/footer.tsx?");
+
+/***/ }),
+
+/***/ "./src/header.tsx":
+/*!************************!*
+  !*** ./src/header.tsx ***!
+  \************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/notes', className: 'header-link' }, \"Notes\"),\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/about', className: 'header-link' }, \"About\")));\r\n}\r\nexports.default = Header;\r\n\n\n//# sourceURL=webpack://frontend/./src/header.tsx?");
+
+/***/ }),
+
+/***/ "./src/home.tsx":
+/*!**********************!*
+  !*** ./src/home.tsx ***!
+  \**********************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Home() {\r\n    return (React.createElement(\"div\", { className: 'home' }));\r\n}\r\nexports.default = Home;\r\n\n\n//# sourceURL=webpack://frontend/./src/home.tsx?");
+
+/***/ }),
+
 /***/ "./src/index.tsx":
 /*!***********************!*
   !*** ./src/index.tsx ***!
@@ -16,7 +49,7 @@
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/notes', activeClassName: 'header-link-active', className: 'header-link' }, \"Notes\"),\r\n        React.createElement(react_router_dom_1.NavLink, { to: '/about', activeClassName: 'header-link-active', className: 'header-link' }, \"About\")));\r\n}\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(Header, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nvar home_1 = __webpack_require__(/*! ./home */ \"./src/home.tsx\");\r\nvar header_1 = __webpack_require__(/*! ./header */ \"./src/header.tsx\");\r\nvar footer_1 = __webpack_require__(/*! ./footer */ \"./src/footer.tsx\");\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(header_1.default, null),\r\n        React.createElement(react_router_dom_1.Route, { path: '/', component: home_1.default }),\r\n        React.createElement(footer_1.default, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
 
 /***/ }),
 
