@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/about.tsx":
+/*!***********************!*
+  !*** ./src/about.tsx ***!
+  \***********************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction About() {\r\n    return (React.createElement(\"div\", { className: \"page\" }));\r\n}\r\nexports.default = About;\r\n\n\n//# sourceURL=webpack://frontend/./src/about.tsx?");
+
+/***/ }),
+
 /***/ "./src/footer.tsx":
 /*!************************!*
   !*** ./src/footer.tsx ***!
@@ -38,7 +49,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Home() {\r\n    return (React.createElement(\"div\", { className: 'home' }));\r\n}\r\nexports.default = Home;\r\n\n\n//# sourceURL=webpack://frontend/./src/home.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Home() {\r\n    return (React.createElement(\"div\", { className: 'page' }));\r\n}\r\nexports.default = Home;\r\n\n\n//# sourceURL=webpack://frontend/./src/home.tsx?");
 
 /***/ }),
 
@@ -49,7 +60,18 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nvar home_1 = __webpack_require__(/*! ./home */ \"./src/home.tsx\");\r\nvar header_1 = __webpack_require__(/*! ./header */ \"./src/header.tsx\");\r\nvar footer_1 = __webpack_require__(/*! ./footer */ \"./src/footer.tsx\");\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(header_1.default, null),\r\n        React.createElement(react_router_dom_1.Route, { path: '/', component: home_1.default }),\r\n        React.createElement(footer_1.default, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nvar ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nvar react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nvar home_1 = __webpack_require__(/*! ./home */ \"./src/home.tsx\");\r\nvar header_1 = __webpack_require__(/*! ./header */ \"./src/header.tsx\");\r\nvar footer_1 = __webpack_require__(/*! ./footer */ \"./src/footer.tsx\");\r\nvar notes_1 = __webpack_require__(/*! ./notes */ \"./src/notes.tsx\");\r\nvar about_1 = __webpack_require__(/*! ./about */ \"./src/about.tsx\");\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(header_1.default, null),\r\n        React.createElement(react_router_dom_1.Route, { exact: true, path: '/', component: home_1.default }),\r\n        React.createElement(react_router_dom_1.Route, { path: '/about', component: about_1.default }),\r\n        React.createElement(react_router_dom_1.Route, { path: '/notes', component: notes_1.default }),\r\n        React.createElement(footer_1.default, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
+
+/***/ }),
+
+/***/ "./src/notes.tsx":
+/*!***********************!*
+  !*** ./src/notes.tsx ***!
+  \***********************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nvar React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Notes() {\r\n    return (React.createElement(\"div\", { className: 'page' }));\r\n}\r\nexports.default = Notes;\r\n\n\n//# sourceURL=webpack://frontend/./src/notes.tsx?");
 
 /***/ }),
 
