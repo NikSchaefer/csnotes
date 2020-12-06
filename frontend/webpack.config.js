@@ -21,10 +21,6 @@ module.exports = {
                 test: /\.js$/,
                 loader: "source-map-loader",
             },
-            {
-                test: /\.css$/,
-                loader: "css-loader",
-            },
         ],
     },
 };
