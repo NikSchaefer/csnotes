@@ -1,8 +1,8 @@
 from django.urls import path
-import pandas as pd
-import sqlite3
+from rest_framework import generics
 
-db = sqlite3.connect("../db.sqlite")
+def cards_view():
+    return False
 
 urlpatterns = [
     
