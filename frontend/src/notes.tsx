@@ -1,19 +1,11 @@
 import * as React from "react";
-import { ShowDatasets } from './home'
-const datasets: string[][] = [
-    ['Dataset', 'apath'],
-    ['Dataset', 'bpath'],
-    ['Dataset', 'cpath'],
-]
+import { Link } from 'react-router-dom'
 
-function ShowDataset(props: { class: string, array: string[][], title: string }) {
-
+function ShowDataset(props: { class: string, title: string }) {
     return (
         <div className={props.class}>
             <h1>{props.title}</h1>
-            <div className='dataset-div'>
-                <ShowDatasets array={props.array} class='dataset-link' />
-            </div>
+            <Link to='/dataset/coding-university' className='button'>Dataset</Link>
         </div>
     )
 }
@@ -21,10 +13,7 @@ function ShowDataset(props: { class: string, array: string[][], title: string })
 export default function Notes() {
     return (
         <div>
-            <ShowDataset class='data-view-white' title='title' array={datasets} />
-            <ShowDataset class='data-view-blue' title='title' array={datasets} />
-            <ShowDataset class='data-view-white' title='title' array={datasets} />
-
+            <ShowDataset class='data-view-white' title='Coding University' />
         </div>
     )
 }

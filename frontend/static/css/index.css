@@ -150,7 +150,11 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 110px
+    padding: 80px
+}
+
+.data-view-white>h1, .data-view-blue>h1 {
+    font-size: 40px;
 }
 
 .data-view-blue {
@@ -177,7 +181,7 @@ h1 {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.651);
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
