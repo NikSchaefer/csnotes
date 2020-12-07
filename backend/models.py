@@ -18,11 +18,11 @@ class Cards(models.Model):
 
 class Tool(models.Model):
     product = models.CharField(max_length=20, default="")
-    product_type = models.CharField(max_length=20, default="")
-    free_tier = models.BooleanField(default=False)
-    free_limit = models.CharField(max_length=20, default='N/A')
+    product_type = models.CharField(max_length=20, blank=True, default="")
+    free_tier = models.BooleanField(default=False, blank=True)
+    free_limit = models.CharField(max_length=20, default='N/A', blank=True)
     link = models.CharField(max_length=40, default='/')
-    img_source = models.CharField(default='/static/Images/')
+    img_source = models.CharField(default='/static/Images/', max_length=60)
 
     def __str__(self):
         return self.product

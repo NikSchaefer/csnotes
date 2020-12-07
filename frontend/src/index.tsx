@@ -23,10 +23,12 @@ function Root() {
                 <Route path='/add' component={Add} />
 
                 <Route exact path='/dataset' component={DatasetView} />
+                <Route exact path='/dataset/' component={DatasetView} />
+
                 <Route path="/dataset" component={Dataset} />
 
-                <Route exact path="/resource" component={ResourceMain} />
-                <Route path="" component={Resoucre} />
+                <Route exact path='/resources' component={ResourceMain} />
+                <Route path='/resources' component={Resoucre} />
 
             </Switch>
             <Footer />

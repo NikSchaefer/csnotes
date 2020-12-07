@@ -9,7 +9,7 @@ interface meta {
 }
 interface content {
     product: string,
-    img: any,
+    img_source: string,
     link: string,
     product_type: string,
     free_tier?: any,
@@ -19,7 +19,6 @@ interface tool {
     meta: meta,
     content: content[]
 }
-
 const blackTool: tool = {
     meta: {
         product: '',
@@ -28,14 +27,12 @@ const blackTool: tool = {
     },
     content:[]
 }
-
-
 const width = '600px';
 function Legend(props:{meta:meta}) {
     function LegendLinks(props:{array:string[]}):any {
         let out = []
         for (let i:number = 0; i < props.array.length; i++) {
-            out.push(<p>{props.array[i]}</p>)
+            out.push(<p key={props.array[i]}>{props.array[i]}</p>)
         }
         return out;
     }
@@ -50,44 +47,49 @@ function Legend(props:{meta:meta}) {
         </div>
     )
 }
-function OptionRow(props: { array: content[], iter: number }) {
+function OptionRow(props: { array: content[], iter: number, meta:meta }) {
     function FreeImg() {
-        if (props.array[props.iter].free_tier) {
-            return <img src="/static/images/Free/check.svg" className='option-free-img' alt='' />
+        if (props.meta.columns.includes('Free Tier')) {
+            if (props.array[props.iter].free_tier) {
+                return [
+                    <img src="/static/images/Free/check.svg" className='option-free-img' alt='' />,
+                    <p className='option-type'>{props.array[props.iter].free_limit}</p>
+                ]
+            }
+            return [
+                <img src="/static/images/Free/low.svg" className='option-free-img' alt='' />,
+                <p className='option-type'>N/A</p>
+            ]
         }
-        return <img src="/static/images/Free/low.svg" className='option-free-img' alt='' />
+        return false
     }
+    console.log(props.array[props.iter].link)
         return (
             <div className='option-div' style={{ maxWidth: width }}>
                 <a href={props.array[props.iter].link} className='option-href'
                     style={{ width: '25%' }}
                     onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }}>
-                    <img src={props.array[props.iter].img} alt={props.array[props.iter].product} className='option-img' />
+                    <img src={props.array[props.iter].img_source} alt="" className='option-img' />
                     {props.array[props.iter].product}
                 </a>
                 <p className='option-type'>{props.array[props.iter].product_type}</p>
                 {FreeImg()}
-                <p className='option-type'>{props.array[props.iter].free_limit}</p>
             </div>
         )
     }
-function Options(props: { array: content[], columns: string[]}):any {
+function Options(props: {meta:meta, array: content[], columns: string[]}):any {
     let out = []
     for (let i:number = 0; i < props.array.length; i++) {
-        out.push(<OptionRow iter={i} array={props.array} />)
+        out.push(<OptionRow meta={props.meta} iter={i} array={props.array} />)
     }
     return out
 }
 export default function Page() {
-    
     const [currentTool, setCurrentTool] = React.useState<tool>(blackTool)
-
     async function getResource() {
         const url = window.location.href.replace(/\/$/, '')
         const lastSeg = url.substr(url.lastIndexOf('/') + 1)
-        console.log('ths')
-        axios.get(`/api/resource/${lastSeg}`).then(res => {
-            console.log(res.data)
+        axios.get(`/api/resources/${lastSeg}?format=json`).then(res => {
             setCurrentTool(res.data)
         })
     }
@@ -99,7 +101,7 @@ export default function Page() {
         <div className='page-div'>
             <h1>{currentTool.meta.product}</h1>
             <Legend meta={currentTool.meta} />
-            <Options columns={currentTool.meta.columns} array={currentTool.content} />
+            <Options meta={currentTool.meta} columns={currentTool.meta.columns} array={currentTool.content} />
             Don't see certain tools? <NavLink to='/about'>Contribute to the list</NavLink>
         </div>
     )

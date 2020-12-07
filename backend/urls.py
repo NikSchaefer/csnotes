@@ -127,10 +127,10 @@ class Hosting_data(generics.ListAPIView):
 
 urlpatterns = [
     path('coding-university/<int:pk>', CardView.as_view()),
-    path('resource/analytics', Analytics_data.as_view()),
-    path('resource/auth', Authentication_data.as_view()),
-    path('resource/database', Database_data.as_view()),
-    path('resource/frontend', FrontEnd_data.as_view()),
-    path('resource/backend', BackEnd_data.as_view()),
-    path('resource/hosting', Hosting_data.as_view()),
+    path('resources/analytics', Analytics_data.as_view()),
+    path('resources/auth', Authentication_data.as_view()),
+    path('resources/database', Database_data.as_view()),
+    path('resources/frontend', FrontEnd_data.as_view()),
+    path('resources/backend', BackEnd_data.as_view()),
+    path('resources/hosting', Hosting_data.as_view()),
 ]

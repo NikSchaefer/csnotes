@@ -65,12 +65,12 @@ footer>p>a:hover {
     text-decoration: none;
 }
 
-.header-link, .footer-link {
+.header-link {
     margin: 5px 10px;
     font-size: 22px;
 }
 
-.header-link:hover, .footer-link:hover {
+.header-link:hover {
     color: rgba(255, 255, 255, 0.781);
 }
 
@@ -194,6 +194,7 @@ h1 {
     align-items: center;
     flex-direction: column;
     font-size: 20px;
+    padding: 100px 0;
 }
 
 .legend-div {
@@ -238,4 +239,33 @@ h1 {
 
 .option-free-img {
     height: 60px;
+}
+
+/* Resources */
+
+.resource-home {
+    padding: 200px;
+}
+
+.home-option-div {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    font-size: 23px;
+}
+
+.home-option {
+    color: rgb(73, 73, 73);
+    padding: 20px;
+    border-bottom: solid rgb(214, 214, 214) 1px;
+}
+
+.home-option:hover {
+    font-weight: 500;
+}
+
+.home-about {
+    display: block;
+    margin: 20px 0;
 }
