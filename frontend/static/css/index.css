@@ -20,7 +20,7 @@ html, body {
 }
 
 body::-webkit-scrollbar {
-    width: 0.7em;
+    width: 0.4em;
 }
 
 body::-webkit-scrollbar-track {
@@ -146,20 +146,15 @@ h1 {
     color: var(--blue);
 }
 
-.data-view-white, .data-view-blue {
+.datasets-list {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 80px
 }
 
-.data-view-white>h1, .data-view-blue>h1 {
+.datasets-list>h1  {
     font-size: 40px;
-}
-
-.data-view-blue {
-    background-color: var(--dark-blue);
-    color: white;
 }
 
 /*   Card View        */
@@ -176,7 +171,8 @@ h1 {
 .card-div {
     width: 95%;
     max-width: 800px;
-    height: 500px;
+    min-height: 500px;
+    height: fit-content;
     margin: 100px auto;
     border-radius: 10px;
     padding: 20px;
