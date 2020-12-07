@@ -1,7 +1,7 @@
 import * as React from "react";
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 const datasets: string[][] = [
-    ['Dataset', 'apath'],
+    ['Coding University', 'coding-university'],
     ['Dataset', 'bpath'],
     ['Dataset', 'cpath'],
 ]
@@ -9,7 +9,7 @@ const datasets: string[][] = [
 export function ShowDatasets(props: { array: string[][], class:string }): any {
     let out: any[] = []
     for (let i: number = 0; i < props.array.length; i++) {
-        out.push(<NavLink key={props.array[i][1]} className={props.class} to={`datasets/${props.array[i][1]}`}>{props.array[i][0]}</NavLink>)
+        out.push(<a key={props.array[i][1]} className={props.class} href={`dataset/${props.array[i][1]}`}>{props.array[i][0]}</a>)
     }
     return out
 }

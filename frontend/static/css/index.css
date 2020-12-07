@@ -81,10 +81,12 @@ footer>p>a:hover {
     color: white;
     border-radius: 10px;
     transition: all ease-in-out 0.2s;
+    width: fit-content;
 }
 
 .button:hover {
     background-color: rgb(40, 54, 173);
+    cursor: pointer;
 }
 
 h1 {
@@ -154,4 +156,33 @@ h1 {
 .data-view-blue {
     background-color: var(--dark-blue);
     color: white;
+}
+
+/*   Card View        */
+
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+.button-div>p {
+    width: 100px
+}
+
+.card-div {
+    width: 95%;
+    max-width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.651);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.view-dataset-div {
+    padding: 100px
 }

@@ -10,5 +10,5 @@ class CardView(generics.RetrieveAPIView):
 
 
 urlpatterns = [
-    path('card/<int:pk>', CardView.as_view())
+    path('coding-university/<int:pk>', CardView.as_view())
 ]
