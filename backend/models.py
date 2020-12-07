@@ -22,6 +22,7 @@ class Tool(models.Model):
     free_tier = models.BooleanField(default=False)
     free_limit = models.CharField(max_length=20, default='N/A')
     link = models.CharField(max_length=40, default='/')
+    img_source = models.CharField(default='/static/Images/')
 
     def __str__(self):
         return self.product

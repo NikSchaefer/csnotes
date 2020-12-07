@@ -1,5 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 
 interface meta {
     product: string,
@@ -7,16 +8,25 @@ interface meta {
     path: string,
 }
 interface content {
-    name: string,
+    product: string,
     img: any,
     link: string,
-    type: string,
-    free?: any,
-    freeLimit?: string,
+    product_type: string,
+    free_tier?: any,
+    free_limit?: string,
 }
 interface tool {
     meta: meta,
     content: content[]
+}
+
+const blackTool: tool = {
+    meta: {
+        product: '',
+        columns: [],
+        path: '',
+    },
+    content:[]
 }
 
 
@@ -40,35 +50,27 @@ function Legend(props:{meta:meta}) {
         </div>
     )
 }
-function OptionRow(props:{ array: content[], iter:number }) {
-    if ('free' in props.array[props.iter]) {
+function OptionRow(props: { array: content[], iter: number }) {
+    function FreeImg() {
+        if (props.array[props.iter].free_tier) {
+            return <img src="/static/images/Free/check.svg" className='option-free-img' alt='' />
+        }
+        return <img src="/static/images/Free/low.svg" className='option-free-img' alt='' />
+    }
         return (
             <div className='option-div' style={{ maxWidth: width }}>
                 <a href={props.array[props.iter].link} className='option-href'
                     style={{ width: '25%' }}
                     onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }}>
-                    <img src={props.array[props.iter].img} alt={props.array[props.iter].name} className='option-img' />
-                    {props.array[props.iter].name}
+                    <img src={props.array[props.iter].img} alt={props.array[props.iter].product} className='option-img' />
+                    {props.array[props.iter].product}
                 </a>
-                <p className='option-type'>{props.array[props.iter].type}</p>
-                <img src={props.array[props.iter].free} className='option-free-img' alt='' />
-                <p className='option-type'>{props.array[props.iter].freeLimit}</p>
+                <p className='option-type'>{props.array[props.iter].product_type}</p>
+                {FreeImg()}
+                <p className='option-type'>{props.array[props.iter].free_limit}</p>
             </div>
         )
     }
-    else {
-        return (
-            <div className='option-div'>
-                <a href={props.array[props.iter].link} className='option-href'
-                    target="_blank" rel='noreferrer'>
-                    <img src={props.array[props.iter].img} alt={props.array[props.iter].name} className='option-img' />
-                    {props.array[props.iter].name}
-                </a>
-                <p>{props.array[props.iter].type}</p>
-            </div>
-        )
-    }
-}
 function Options(props: { array: content[], columns: string[]}):any {
     let out = []
     for (let i:number = 0; i < props.array.length; i++) {
@@ -76,12 +78,28 @@ function Options(props: { array: content[], columns: string[]}):any {
     }
     return out
 }
-export default function Page(props:{ config:tool }) {
+export default function Page() {
+    
+    const [currentTool, setCurrentTool] = React.useState<tool>(blackTool)
+
+    async function getResource() {
+        const url = window.location.href.replace(/\/$/, '')
+        const lastSeg = url.substr(url.lastIndexOf('/') + 1)
+        console.log('ths')
+        axios.get(`/api/resource/${lastSeg}`).then(res => {
+            console.log(res.data)
+            setCurrentTool(res.data)
+        })
+    }
+
+    window.onload = function () {
+        getResource()
+    }
     return (
         <div className='page-div'>
-            <h1>{props.config.meta.product}</h1>
-            <Legend meta={props.config.meta} />
-            <Options columns={props.config.meta.columns} array={props.config.content} />
+            <h1>{currentTool.meta.product}</h1>
+            <Legend meta={currentTool.meta} />
+            <Options columns={currentTool.meta.columns} array={currentTool.content} />
             Don't see certain tools? <NavLink to='/about'>Contribute to the list</NavLink>
         </div>
     )
