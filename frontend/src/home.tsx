@@ -40,7 +40,7 @@ export default function Home() {
     function ResContent(props: { arr: sets[] }): any {
         let out: any[] = []
         for (let i: number = 0; i < props.arr.length; i++) {
-            out.push(<Link to='/' className='home-res-link'>{props.arr[i].title}</Link>)
+            out.push(<a href={`/resources/${props.arr[i].link}`} className='home-res-link'>{props.arr[i].title}</a>)
         }
         return out
     }

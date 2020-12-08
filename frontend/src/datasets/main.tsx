@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from 'react-router-dom'
 
 export interface sets {
     title: string,
@@ -27,11 +26,10 @@ function ShowDataset(props: { arr: sets[] }): any {
         out.push(
             <div className='datasets-list'>
                 <h1>{props.arr[i].title}</h1>
-                <Link to={`/dataset/${props.arr[i].link}`} className='button'>Dataset</Link>
+                <a href={`/dataset/${props.arr[i].link}`} className='button'>Dataset</a>
             </div>
         )
     }
-
     return out
 }
 

@@ -36,7 +36,7 @@ const resources: source[] = [
 function Options(props: { arr: source[] }): any {
     let out = []
     for (let i = 0; i < props.arr.length; i++) {
-        out.push(<Link className='home-option' to={props.arr[i].path}>{props.arr[i].title}</Link>)
+        out.push(<a className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)
     }
     return out
 }

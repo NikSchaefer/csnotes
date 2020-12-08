@@ -170,8 +170,8 @@ h1 {
 
 .card-div {
     width: 95%;
-    max-width: 800px;
-    min-height: 500px;
+    max-width: 700px;
+    min-height: 400px;
     height: fit-content;
     margin: 100px auto;
     border-radius: 10px;
@@ -284,8 +284,10 @@ h1 {
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.527);
     margin: 20px;
     transition: all ease-in-out 0.3s;
+    background-color: var(--blue);
+    color: white;
 }
 
 .home-res-link:hover {
-    box-shadow: 0px 10px 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.527);
 }
