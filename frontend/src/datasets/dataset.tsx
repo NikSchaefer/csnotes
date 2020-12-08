@@ -1,7 +1,7 @@
 import * as React from "react";
 import Axios from "axios";
 
-let maximum = 1000
+let maximum = 1700
 let index: number = Math.floor(Math.random() * (maximum + 1));
 let pastIndexes: number[] = []
 export default function Dataset() {
@@ -35,17 +35,13 @@ export default function Dataset() {
     }
 
     function handelPrev() {
-        index = pastIndexes[pastIndexes.length - 2]
-        getData(index)
-        if (pastIndexes.length >= 20) {
-            pastIndexes.shift()
-        }
+        index -= 1
     }
 
     window.onload = function () {
         getData(index)
     }
-
+    console.log(pastIndexes)
     return (
         <div className="view-dataset-div">
             <h1>{lastSeg} dataset</h1>
