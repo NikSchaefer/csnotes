@@ -9,16 +9,59 @@ function ShowDatasets(props: { array: sets[] }): any {
     return out
 }
 
+export const listOfTools: sets[] = [
+    {
+        title: 'Frontend Frameworks',
+        link: 'frontend'
+    },
+    {
+        title: 'Backend Frameworks',
+        link: 'backend'
+    },
+    {
+        title: 'Hosting',
+        link: 'hosting'
+    },
+    {
+        title: 'Databases',
+        link: 'database'
+    },
+    {
+        title: 'Analytics',
+        link: 'analytics'
+    },
+    {
+        title: 'Authentication',
+        link: 'auth'
+    }
+]
+
 export default function Home() {
+    function ResContent(props: { arr: sets[] }): any {
+        let out: any[] = []
+        for (let i: number = 0; i < props.arr.length; i++) {
+            out.push(<Link to='/' className='home-res-link'>{props.arr[i].title}</Link>)
+        }
+        return out
+    }
     return (
         <div>
             <div className='home-colored'>
                 <h1>CS Notes</h1>
                 <p>A site dedicated to datasets of cs notes</p>
             </div>
+            <div>
+                <h1>Resources</h1>
+                <p>Compare the best Tools and frameworks to build your projects</p>
+                <div className='home-res-div'>
+                    <ResContent arr={listOfTools} />
+                </div>
+                <Link to='/resources' className='dataset-view'>View More</Link>
+            </div>
+
             <div className='home-div'>
                 <div className='dataset-div'>
-                    <ShowDatasets array={listOfDatasets}  />
+                    <ShowDatasets array={listOfDatasets} />
                     <Link className='dataset-view' to='/dataset'>View More</Link>
                 </div>
                 <h1>Datasets</h1>
