@@ -12,6 +12,9 @@ import Dataset from './datasets/dataset'
 import ResourceMain from './Resources/main'
 import Resoucre from './Resources/resource'
 
+import Note from './Notes/notes'
+import Login from './Login'
+
 function Root() {
     return (
         <Router>
@@ -29,6 +32,11 @@ function Root() {
 
                 <Route exact path='/resources' component={ResourceMain} />
                 <Route path='/resources' component={Resoucre} />
+
+                <Route path='/login' component={Login} />
+
+                <Route path='/ntoes' component={Note} />
+
 
             </Switch>
             <Footer />
