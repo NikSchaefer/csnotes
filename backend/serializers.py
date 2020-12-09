@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import (Cards, Analytics, Auth, Database,
+from .models import (Cards, Note, Analytics, Auth, Database,
                      Hosting, Frontend, Backend)
 # create serializers here
 
@@ -8,46 +8,46 @@ from .models import (Cards, Analytics, Auth, Database,
 class CardSerial(serializers.ModelSerializer):
     class Meta:
         model = Cards
-        fields = ('id', 'type', 'front', 'back', 'known')
+        fields = ('id', 'type', 'front', 'back')
+
+
+class NoteSerial(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = '__all__'
 
 
 class AnalyticsSerial(serializers.ModelSerializer):
     class Meta:
         model = Analytics
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'
 
 
 class AuthSerial(serializers.ModelSerializer):
     class Meta:
         model = Auth
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'
 
 
 class DatabaseSerial(serializers.ModelSerializer):
     class Meta:
         model = Database
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'
 
 
 class FrontEndSerial(serializers.ModelSerializer):
     class Meta:
         model = Frontend
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'
 
 
 class BackEndSerial(serializers.ModelSerializer):
     class Meta:
         model = Backend
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'
 
 
 class HostingSerial(serializers.ModelSerializer):
     class Meta:
         model = Hosting
-        fields = ('product', 'product_type', 'free_tier',
-                  'free_limit', 'img_source', 'link')
+        fields = '__all__'

@@ -1,9 +1,10 @@
 from django.urls import path
 from rest_framework import generics
-from .models import (Cards, Analytics, Auth, Database,
+from .models import (Cards, Note, Analytics, Auth, Database,
                      Hosting, Frontend, Backend)
 from .serializers import (
     CardSerial, AnalyticsSerial,
+    NoteSerial,
     AuthSerial, DatabaseSerial,
     FrontEndSerial, HostingSerial, BackEndSerial)  # , ToolSerializer
 # pylint: disable=no-member
@@ -12,6 +13,11 @@ from .serializers import (
 class CardView(generics.RetrieveAPIView):
     queryset = Cards.objects.all()
     serializer_class = CardSerial
+
+
+class NoteView(generics.RetrieveAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerial
 
 
 class Analytics_data(generics.ListAPIView):
@@ -36,7 +42,8 @@ class Authentication_data(generics.ListAPIView):
     serializer_class = AuthSerial
 
     def get(self, request, *args, **kwargs):
-        response = super(Authentication_data, self).get(request, *args, **kwargs)
+        response = super(Authentication_data, self).get(
+            request, *args, **kwargs)
         response.data = {
             'meta': {
                 'product': 'Authentication',
@@ -46,7 +53,6 @@ class Authentication_data(generics.ListAPIView):
             'content': response.data
         }
         return response
-
 
 
 class Database_data(generics.ListAPIView):
@@ -67,7 +73,6 @@ class Database_data(generics.ListAPIView):
         return response
 
 
-
 class FrontEnd_data(generics.ListAPIView):
     queryset = Frontend.objects.all()
     serializer_class = FrontEndSerial
@@ -84,7 +89,6 @@ class FrontEnd_data(generics.ListAPIView):
             'content': response.data
         }
         return response
-
 
 
 class BackEnd_data(generics.ListAPIView):
@@ -105,7 +109,6 @@ class BackEnd_data(generics.ListAPIView):
         return response
 
 
-
 class Hosting_data(generics.ListAPIView):
     queryset = Hosting.objects.all()
     serializer_class = HostingSerial
@@ -124,9 +127,12 @@ class Hosting_data(generics.ListAPIView):
         return response
 
 
-
 urlpatterns = [
     path('coding-university/<int:pk>', CardView.as_view()),
+
+    path('notes/<int:pk>', NoteView.as_view()),
+
+
     path('resources/analytics', Analytics_data.as_view()),
     path('resources/auth', Authentication_data.as_view()),
     path('resources/database', Database_data.as_view()),

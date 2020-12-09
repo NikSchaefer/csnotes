@@ -16,6 +16,16 @@ class Cards(models.Model):
         db_table = 'cards'
 
 
+class Note(models.Model):
+    title = models.CharField(max_length=30)
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.title
+
+
 class Tool(models.Model):
     product = models.CharField(max_length=20, default="")
     product_type = models.CharField(max_length=20, blank=True, default="")
