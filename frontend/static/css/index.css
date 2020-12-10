@@ -181,6 +181,7 @@ h1 {
 .dataset-button {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 250px;
     width: 200px;
     padding: 10px;

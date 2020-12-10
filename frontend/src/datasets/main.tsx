@@ -7,24 +7,24 @@ export interface sets {
 
 export const listOfDatasets: sets[] = [
     {
-        title: 'Coding University Dataset 1',
+        title: 'Bits and Bytes',
         link: 'coding-university/1'
     },
     {
-        title: 'Coding University Dataset 2',
-        link: 'coding-university/200'
+        title: 'Trees, Sorting',
+        link: 'coding-university/51'
     },
     {
-        title: 'Coding University Dataset 3',
-        link: 'coding-university/400'
+        title: 'Hash, logarithm, trees',
+        link: 'coding-university/101'
     },
     {
-        title: 'Coding University Dataset 4',
-        link: 'coding-university/600'
+        title: 'Nodes, Graph Theory, complexity, data structures',
+        link: 'coding-university/151'
     },
     {
-        title: 'Coding University Dataset 5',
-        link: 'coding-university/800'
+        title: 'Codeless Questions, Python, Probabilty',
+        link: 'coding-university/201'
     }
 ]
 
@@ -40,6 +40,7 @@ export default function Notes() {
     return (
         <div className='page-div'>
             <h1>Datasets</h1>
+            <p>Provided by <a style={{ color: 'var(--blue)' }} href="https://github.com/jwasham/coding-interview-university">Coding University</a></p>
             <div className='datasets-list'>
                 <ShowDataset arr={listOfDatasets} />
             </div>

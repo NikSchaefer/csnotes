@@ -9,15 +9,15 @@ export default function Dataset() {
 
     const [data, setData] = React.useState<any>()
     const [cardText, setCardText] = React.useState<string>('Reload the Page')
-    function getData(index: number) {
-        Axios.get(`/api/dataset/${dataset}/${index}?format=json`)
+    function getData(fetchIndex: number) {
+        Axios.get(`/api/dataset/${dataset}/${fetchIndex}?format=json`)
             .then(res => {
+                console.log(res.status)
                 setData(res.data)
                 setCardText(res.data.front)
             })
             .catch(err => {
                 index += 1
-                console.log(err)
                 getData(index)
             })
     }
@@ -28,13 +28,16 @@ export default function Dataset() {
         }
         setCardText(data.front)
     }
-
     function handleNext() {
-        index++;
-        getData(index)
+        if (index < edge + 50) {
+            index++;
+            getData(index);
+            return;
+        }
+        setCardText('Dataset Completed')
     }
     function handelPrev() {
-        if (index !== edge) {
+        if (index > edge) {
             index--
             getData(index)
         }
@@ -50,7 +53,7 @@ export default function Dataset() {
             <div className='card-div' onClick={handleFlip}>
                 <p>{cardText}</p>
             </div>
-            <p>Click to Flip</p>
+            <p>Click to Flip {index}</p>
             <div className='button-div'>
                 <p className='button' onClick={handelPrev}>Previous</p>
                 <p className='button' onClick={handleNext}>Next</p>
