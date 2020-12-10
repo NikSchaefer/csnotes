@@ -68,10 +68,24 @@ footer>p>a:hover {
 .header-link {
     margin: 5px 10px;
     font-size: 22px;
+    position: relative;
 }
 
-.header-link:hover {
-    color: rgba(255, 255, 255, 0.781);
+.header-link:before {
+    content: "";
+    position: absolute;
+    border-width: 1px;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.header-link:hover:before {
+    width:100%;
+    visibility: visible;
 }
 
 #header-login {
@@ -268,11 +282,12 @@ h1 {
     color: rgb(73, 73, 73);
     padding: 20px;
     margin: 20px 0;
-    border-bottom: solid rgb(214, 214, 214) 1px;
+    border-bottom: solid var(--blue) 1px;
+    transition: all ease-in-out 0.2s;
 }
 
 .home-option:hover {
-    font-weight: 500;
+    color: var(--blue)
 }
 
 .home-about {
