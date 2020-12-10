@@ -53,7 +53,7 @@ export default function Dataset() {
             <div className='card-div' onClick={handleFlip}>
                 <p>{cardText}</p>
             </div>
-            <p>Click to Flip {index}</p>
+            <p>Click to Flip</p>
             <div className='button-div'>
                 <p className='button' onClick={handelPrev}>Previous</p>
                 <p className='button' onClick={handleNext}>Next</p>
