@@ -17,10 +17,10 @@ class Cards(models.Model):
 
 
 class Note(models.Model):
-    title = models.CharField(max_length=30)
-    body = models.TextField()
+    title = models.CharField(max_length=30, default='')
+    body = models.TextField(default='')
     date = models.DateTimeField(auto_now_add=True)
-    user = models.CharField(max_length=30)
+    user = models.CharField(max_length=30, default='')
 
     def __str__(self):
         return self.title

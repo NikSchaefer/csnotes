@@ -16,7 +16,7 @@
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Login() {\r\n    return (React.createElement(\"div\", null));\r\n}\r\nexports.default = Login;\r\n\n\n//# sourceURL=webpack://frontend/./src/Login.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Login() {\r\n    return (React.createElement(\"div\", { className: 'login-div' },\r\n        React.createElement(\"div\", { className: 'login' })));\r\n}\r\nexports.default = Login;\r\n\n\n//# sourceURL=webpack://frontend/./src/Login.tsx?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\")));\r\n}\r\nexports.default = Header;\r\n\n\n//# sourceURL=webpack://frontend/./src/header.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/login', className: 'header-link', id: 'header-login' }, \"Login\")));\r\n}\r\nexports.default = Header;\r\n\n\n//# sourceURL=webpack://frontend/./src/header.tsx?");
 
 /***/ }),
 

@@ -74,6 +74,10 @@ footer>p>a:hover {
     color: rgba(255, 255, 255, 0.781);
 }
 
+#header-login {
+    margin-left: auto;
+}
+
 .button {
     background-color: var(--dark-blue);
     padding: 20px;
@@ -100,6 +104,11 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     height: 400px;
+}
+
+.home-div {
+    max-width: 800px;
+    margin: auto;
 }
 
 .home-colored>p {
@@ -172,7 +181,6 @@ h1 {
     width: 95%;
     max-width: 700px;
     min-height: 400px;
-    height: fit-content;
     margin: 100px auto;
     border-radius: 10px;
     padding: 20px;
@@ -181,6 +189,7 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    height: fit-content;
 }
 
 .view-dataset-div {
@@ -258,7 +267,7 @@ h1 {
 .home-option {
     color: rgb(73, 73, 73);
     padding: 20px;
-    margin:20px 0;
+    margin: 20px 0;
     border-bottom: solid rgb(214, 214, 214) 1px;
 }
 
@@ -274,7 +283,8 @@ h1 {
 .home-res-div {
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
+    max-width: 800px;
+    justify-content: center;
     margin: 40px auto;
 }
 
@@ -290,5 +300,16 @@ h1 {
 }
 
 .home-res-link:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.527);
+    background-color: var(--dark-blue);
+}
+
+.login-div {
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    background-color: var(--blue);
 }
