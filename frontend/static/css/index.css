@@ -44,8 +44,9 @@ a {
 
 header, footer {
     background-color: var(--blue);
-    width: 94%;
-    padding: 10px 3%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5%;
     display: flex;
     color: white;
     font-size: 18px;
@@ -138,7 +139,7 @@ h1 {
 
 .home-contribute {
     justify-content: center;
-    padding:50px;
+    padding: 50px;
 }
 
 .home-contribute>h1 {

@@ -3,6 +3,7 @@ from django.db import models
 
 class Cards(models.Model):
     id = models.AutoField(primary_key=True)
+    type = models.TextField(default="")
     front = models.TextField()
     back = models.TextField()
 
