@@ -59,6 +59,7 @@ footer {
 
 footer>p>a {
     text-decoration: underline;
+    font-weight: 500;
 }
 
 footer>p>a:hover {
@@ -84,7 +85,7 @@ footer>p>a:hover {
 }
 
 .header-link:hover:before {
-    width:100%;
+    width: 100%;
     visibility: visible;
 }
 
@@ -171,13 +172,31 @@ h1 {
 
 .datasets-list {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 80px
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: auto;
+    justify-content: center;
+    color: white;
 }
 
-.datasets-list>h1 {
-    font-size: 40px;
+.dataset-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 200px;
+    padding: 10px;
+    background: linear-gradient(180deg, var(--blue) 50%, white 50%) top;
+    background-size: 100% 200%;
+    margin: 20px;
+    border: var(--blue) 1px solid;
+    transition: all ease-in-out 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.623) 0 0 5px;
+}
+
+.dataset-button:hover {
+    background-position: bottom;
+    color: var(--blue)
 }
 
 /*   Card View        */
@@ -218,6 +237,7 @@ h1 {
     flex-direction: column;
     font-size: 20px;
     padding: 100px 0;
+    min-height: 70vh;
 }
 
 .legend-div {

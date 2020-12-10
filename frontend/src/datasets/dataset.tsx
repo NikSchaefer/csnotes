@@ -1,18 +1,16 @@
 import * as React from "react";
 import Axios from "axios";
 
-let maximum = 1700
-let index: number = Math.floor(Math.random() * (maximum + 1));
-let pastIndexes: number[] = []
+let index: number;
+let edge: number;
 export default function Dataset() {
-    let url = window.location.href.replace(/\/$/, '')
-    let lastSeg = url.substr(url.lastIndexOf('/') + 1)
+    const url = window.location.href.replace(/\/$/, '').split('/')
+    const dataset = url[url.length - 2]
 
     const [data, setData] = React.useState<any>()
-    const [cardText, setCardText] = React.useState<any>('Reload the Page')
+    const [cardText, setCardText] = React.useState<string>('Reload the Page')
     function getData(index: number) {
-        Axios.get(`/api/${lastSeg}/${index}?format=json`).then(res => {
-            pastIndexes.push(index)
+        Axios.get(`/api/dataset/${dataset}/${index}?format=json`).then(res => {
             setData(res.data)
             setCardText(res.data.front)
         })
@@ -20,31 +18,29 @@ export default function Dataset() {
     function handleFlip() {
         if (data.front == cardText) {
             setCardText(data.back)
+            return;
         }
-        else {
-            setCardText(data.front)
-        }
+        setCardText(data.front)
     }
 
     function handleNext() {
-        index = Math.floor(Math.random() * (maximum))
+        index++;
         getData(index)
-        if (pastIndexes.length > 20) {
-            pastIndexes.shift()
+    }
+    function handelPrev() {
+        if (index !== edge) {
+            index--
+            getData(index)
         }
     }
-
-    function handelPrev() {
-        index -= 1
-    }
-
     window.onload = function () {
+        index = parseInt(url[url.length - 1], 10)
+        edge = index
         getData(index)
     }
-    console.log(pastIndexes)
     return (
         <div className="view-dataset-div">
-            <h1>{lastSeg} dataset</h1>
+            <h1>{dataset} dataset</h1>
             <div className='card-div' onClick={handleFlip}>
                 <p>{cardText}</p>
             </div>
