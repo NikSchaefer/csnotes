@@ -138,8 +138,7 @@ h1 {
 
 .home-contribute {
     justify-content: center;
-    padding: 100px 0;
-    flex-wrap: wrap;
+    padding:50px;
 }
 
 .home-contribute>h1 {
@@ -181,7 +180,6 @@ h1 {
 
 .dataset-button {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 250px;
     width: 200px;
@@ -190,7 +188,7 @@ h1 {
     background-size: 100% 200%;
     margin: 20px;
     border: var(--blue) 1px solid;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.25s;
     box-shadow: rgba(0, 0, 0, 0.623) 0 0 5px;
 }
 
@@ -308,11 +306,6 @@ h1 {
 
 .home-option:hover {
     color: var(--blue)
-}
-
-.home-about {
-    display: block;
-    margin: 20px 0;
 }
 
 .home-res-div {

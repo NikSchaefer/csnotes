@@ -10,10 +10,16 @@ export default function Dataset() {
     const [data, setData] = React.useState<any>()
     const [cardText, setCardText] = React.useState<string>('Reload the Page')
     function getData(index: number) {
-        Axios.get(`/api/dataset/${dataset}/${index}?format=json`).then(res => {
-            setData(res.data)
-            setCardText(res.data.front)
-        })
+        Axios.get(`/api/dataset/${dataset}/${index}?format=json`)
+            .then(res => {
+                setData(res.data)
+                setCardText(res.data.front)
+            })
+            .catch(err => {
+                index += 1
+                console.log(err)
+                getData(index)
+            })
     }
     function handleFlip() {
         if (data.front == cardText) {

@@ -47,7 +47,7 @@ export default function Main() {
             <h1>Resources</h1>
             <div className='home-option-div'>
                 <Options arr={resources} />
-                <Link to='/about' className='home-about'>Contribute to the list</Link>
+                <Link to='/about'>Contribute to the list</Link>
             </div>
         </div>
     )
