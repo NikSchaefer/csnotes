@@ -100,7 +100,6 @@ footer>p>a:hover {
 
 .button {
     background-color: var(--dark-blue);
-    margin: unset auto;
     padding: 20px;
     margin: 10px 20px;
     color: white;
