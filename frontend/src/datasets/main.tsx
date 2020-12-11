@@ -28,7 +28,7 @@ export const listOfDatasets: sets[] = [
     }
 ]
 
-function ShowDataset(props: { arr: sets[] }): any {
+export function ShowDataset(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
         out.push(<a href={`/dataset/${props.arr[i].link}`} className='dataset-button'>{props.arr[i].title}</a>)
@@ -36,7 +36,7 @@ function ShowDataset(props: { arr: sets[] }): any {
     return out
 }
 
-export default function Notes() {
+export default function Main() {
     return (
         <div className='page-div'>
             <h1>Datasets</h1>

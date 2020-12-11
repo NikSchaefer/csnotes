@@ -9,14 +9,47 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Login.tsx":
-/*!***********************!*
-  !*** ./src/Login.tsx ***!
-  \***********************/
+/***/ "./src/Add/add.tsx":
+/*!*************************!*
+  !*** ./src/Add/add.tsx ***!
+  \*************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Login() {\r\n    return (React.createElement(\"div\", { className: 'login-div' },\r\n        React.createElement(\"div\", { className: 'login' })));\r\n}\r\nexports.default = Login;\r\n\n\n//# sourceURL=webpack://frontend/./src/Login.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction AddDataset() {\r\n    return (React.createElement(\"div\", null));\r\n}\r\nexports.default = AddDataset;\r\n\n\n//# sourceURL=webpack://frontend/./src/Add/add.tsx?");
+
+/***/ }),
+
+/***/ "./src/HeaderFooter/footer.tsx":
+/*!*************************************!*
+  !*** ./src/HeaderFooter/footer.tsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Footer() {\r\n    return (React.createElement(\"footer\", null,\r\n        React.createElement(\"div\", null,\r\n            React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/tools', className: 'header-link' }, \"Student Tools\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\")),\r\n        React.createElement(\"p\", null,\r\n            \"This is an Open source project, learn how to \",\r\n            React.createElement(react_router_dom_1.Link, { to: '/about' }, \"contribute\"))));\r\n}\r\nexports.default = Footer;\r\n\n\n//# sourceURL=webpack://frontend/./src/HeaderFooter/footer.tsx?");
+
+/***/ }),
+
+/***/ "./src/HeaderFooter/header.tsx":
+/*!*************************************!*
+  !*** ./src/HeaderFooter/header.tsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/tools', className: 'header-link' }, \"Student Tools\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/login', className: 'header-link', id: 'header-login' }, \"Login\")));\r\n}\r\nexports.default = Header;\r\n\n\n//# sourceURL=webpack://frontend/./src/HeaderFooter/header.tsx?");
+
+/***/ }),
+
+/***/ "./src/Login/Login.tsx":
+/*!*****************************!*
+  !*** ./src/Login/Login.tsx ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Login() {\r\n    return (React.createElement(\"div\", { className: 'login-div' },\r\n        React.createElement(\"div\", { className: 'login' })));\r\n}\r\nexports.default = Login;\r\n\n\n//# sourceURL=webpack://frontend/./src/Login/Login.tsx?");
 
 /***/ }),
 
@@ -38,7 +71,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst resources = [\r\n    {\r\n        title: 'Frontend Frameworks',\r\n        path: '/resources/frontend'\r\n    },\r\n    {\r\n        title: 'Backend Frameworks',\r\n        path: '/resources/backend'\r\n    },\r\n    {\r\n        title: 'Analytics',\r\n        path: '/resources/analytics'\r\n    },\r\n    {\r\n        title: 'Authentication',\r\n        path: '/resources/auth'\r\n    },\r\n    {\r\n        title: 'Databases',\r\n        path: '/resources/database'\r\n    },\r\n    {\r\n        title: 'Hosting',\r\n        path: '/resources/hosting'\r\n    },\r\n];\r\nfunction Options(props) {\r\n    let out = [];\r\n    for (let i = 0; i < props.arr.length; i++) {\r\n        out.push(React.createElement(\"a\", { className: 'home-option', href: props.arr[i].path }, props.arr[i].title));\r\n    }\r\n    return out;\r\n}\r\nfunction Main() {\r\n    return (React.createElement(\"div\", { className: 'resource-home' },\r\n        React.createElement(\"h1\", null, \"Resources\"),\r\n        React.createElement(\"div\", { className: 'home-option-div' },\r\n            React.createElement(Options, { arr: resources }),\r\n            React.createElement(react_router_dom_1.Link, { to: '/about' }, \"Contribute to the list\"))));\r\n}\r\nexports.default = Main;\r\n\n\n//# sourceURL=webpack://frontend/./src/Resources/main.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Options = void 0;\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst resources = [\r\n    {\r\n        title: 'Frontend Frameworks',\r\n        path: '/resources/frontend'\r\n    },\r\n    {\r\n        title: 'Backend Frameworks',\r\n        path: '/resources/backend'\r\n    },\r\n    {\r\n        title: 'Analytics',\r\n        path: '/resources/analytics'\r\n    },\r\n    {\r\n        title: 'Authentication',\r\n        path: '/resources/auth'\r\n    },\r\n    {\r\n        title: 'Databases',\r\n        path: '/resources/database'\r\n    },\r\n    {\r\n        title: 'Hosting',\r\n        path: '/resources/hosting'\r\n    },\r\n];\r\nfunction Options(props) {\r\n    let out = [];\r\n    for (let i = 0; i < props.arr.length; i++) {\r\n        out.push(React.createElement(\"a\", { className: 'home-option', href: props.arr[i].path }, props.arr[i].title));\r\n    }\r\n    return out;\r\n}\r\nexports.Options = Options;\r\nfunction Main() {\r\n    return (React.createElement(\"div\", { className: 'resource-home' },\r\n        React.createElement(\"h1\", null, \"Resources\"),\r\n        React.createElement(\"div\", { className: 'home-option-div' },\r\n            React.createElement(Options, { arr: resources }),\r\n            React.createElement(react_router_dom_1.Link, { to: '/about' }, \"Contribute to the list\"))));\r\n}\r\nexports.default = Main;\r\n\n\n//# sourceURL=webpack://frontend/./src/Resources/main.tsx?");
 
 /***/ }),
 
@@ -64,17 +97,6 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 
 /***/ }),
 
-/***/ "./src/add.tsx":
-/*!*********************!*
-  !*** ./src/add.tsx ***!
-  \*********************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction AddDataset() {\r\n    return (React.createElement(\"div\", null));\r\n}\r\nexports.default = AddDataset;\r\n\n\n//# sourceURL=webpack://frontend/./src/add.tsx?");
-
-/***/ }),
-
 /***/ "./src/datasets/dataset.tsx":
 /*!**********************************!*
   !*** ./src/datasets/dataset.tsx ***!
@@ -93,29 +115,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.listOfDatasets = void 0;\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.listOfDatasets = [\r\n    {\r\n        title: 'Bits and Bytes',\r\n        link: 'coding-university/1'\r\n    },\r\n    {\r\n        title: 'Trees, Sorting',\r\n        link: 'coding-university/51'\r\n    },\r\n    {\r\n        title: 'Hash, logarithm, trees',\r\n        link: 'coding-university/101'\r\n    },\r\n    {\r\n        title: 'Nodes, Graph Theory, complexity, data structures',\r\n        link: 'coding-university/151'\r\n    },\r\n    {\r\n        title: 'Codeless Questions, Python, Probabilty',\r\n        link: 'coding-university/201'\r\n    }\r\n];\r\nfunction ShowDataset(props) {\r\n    let out = [];\r\n    for (let i = 0; i < props.arr.length; i++) {\r\n        out.push(React.createElement(\"a\", { href: `/dataset/${props.arr[i].link}`, className: 'dataset-button' }, props.arr[i].title));\r\n    }\r\n    return out;\r\n}\r\nfunction Notes() {\r\n    return (React.createElement(\"div\", { className: 'page-div' },\r\n        React.createElement(\"h1\", null, \"Datasets\"),\r\n        React.createElement(\"p\", null,\r\n            \"Provided by \",\r\n            React.createElement(\"a\", { style: { color: 'var(--blue)' }, href: \"https://github.com/jwasham/coding-interview-university\" }, \"Coding University\")),\r\n        React.createElement(\"div\", { className: 'datasets-list' },\r\n            React.createElement(ShowDataset, { arr: exports.listOfDatasets }))));\r\n}\r\nexports.default = Notes;\r\n\n\n//# sourceURL=webpack://frontend/./src/datasets/main.tsx?");
-
-/***/ }),
-
-/***/ "./src/footer.tsx":
-/*!************************!*
-  !*** ./src/footer.tsx ***!
-  \************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Footer() {\r\n    return (React.createElement(\"footer\", null,\r\n        React.createElement(\"div\", null,\r\n            React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n            React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\")),\r\n        React.createElement(\"p\", null,\r\n            \"This is an Open source project, learn how to \",\r\n            React.createElement(react_router_dom_1.Link, { to: '/about' }, \"contribute\"))));\r\n}\r\nexports.default = Footer;\r\n\n\n//# sourceURL=webpack://frontend/./src/footer.tsx?");
-
-/***/ }),
-
-/***/ "./src/header.tsx":
-/*!************************!*
-  !*** ./src/header.tsx ***!
-  \************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nfunction Header() {\r\n    return (React.createElement(\"header\", null,\r\n        React.createElement(react_router_dom_1.Link, { to: '/', className: 'header-link' }, \"Home\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/resources', className: 'header-link' }, \"Resources\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/dataset', className: 'header-link' }, \"Datasets\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/about', className: 'header-link' }, \"About\"),\r\n        React.createElement(react_router_dom_1.Link, { to: '/login', className: 'header-link', id: 'header-login' }, \"Login\")));\r\n}\r\nexports.default = Header;\r\n\n\n//# sourceURL=webpack://frontend/./src/header.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.ShowDataset = exports.listOfDatasets = void 0;\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nexports.listOfDatasets = [\r\n    {\r\n        title: 'Bits and Bytes',\r\n        link: 'coding-university/1'\r\n    },\r\n    {\r\n        title: 'Trees, Sorting',\r\n        link: 'coding-university/51'\r\n    },\r\n    {\r\n        title: 'Hash, logarithm, trees',\r\n        link: 'coding-university/101'\r\n    },\r\n    {\r\n        title: 'Nodes, Graph Theory, complexity, data structures',\r\n        link: 'coding-university/151'\r\n    },\r\n    {\r\n        title: 'Codeless Questions, Python, Probabilty',\r\n        link: 'coding-university/201'\r\n    }\r\n];\r\nfunction ShowDataset(props) {\r\n    let out = [];\r\n    for (let i = 0; i < props.arr.length; i++) {\r\n        out.push(React.createElement(\"a\", { href: `/dataset/${props.arr[i].link}`, className: 'dataset-button' }, props.arr[i].title));\r\n    }\r\n    return out;\r\n}\r\nexports.ShowDataset = ShowDataset;\r\nfunction Main() {\r\n    return (React.createElement(\"div\", { className: 'page-div' },\r\n        React.createElement(\"h1\", null, \"Datasets\"),\r\n        React.createElement(\"p\", null,\r\n            \"Provided by \",\r\n            React.createElement(\"a\", { style: { color: 'var(--blue)' }, href: \"https://github.com/jwasham/coding-interview-university\" }, \"Coding University\")),\r\n        React.createElement(\"div\", { className: 'datasets-list' },\r\n            React.createElement(ShowDataset, { arr: exports.listOfDatasets }))));\r\n}\r\nexports.default = Main;\r\n\n\n//# sourceURL=webpack://frontend/./src/datasets/main.tsx?");
 
 /***/ }),
 
@@ -137,7 +137,29 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\n
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst home_1 = __webpack_require__(/*! ./home */ \"./src/home.tsx\");\r\nconst header_1 = __webpack_require__(/*! ./header */ \"./src/header.tsx\");\r\nconst footer_1 = __webpack_require__(/*! ./footer */ \"./src/footer.tsx\");\r\nconst main_1 = __webpack_require__(/*! ./datasets/main */ \"./src/datasets/main.tsx\");\r\nconst about_1 = __webpack_require__(/*! ./about */ \"./src/about.tsx\");\r\nconst add_1 = __webpack_require__(/*! ./add */ \"./src/add.tsx\");\r\nconst dataset_1 = __webpack_require__(/*! ./datasets/dataset */ \"./src/datasets/dataset.tsx\");\r\nconst main_2 = __webpack_require__(/*! ./Resources/main */ \"./src/Resources/main.tsx\");\r\nconst resource_1 = __webpack_require__(/*! ./Resources/resource */ \"./src/Resources/resource.tsx\");\r\nconst notes_1 = __webpack_require__(/*! ./Notes/notes */ \"./src/Notes/notes.tsx\");\r\nconst Login_1 = __webpack_require__(/*! ./Login */ \"./src/Login.tsx\");\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(header_1.default, null),\r\n        React.createElement(react_router_dom_1.Switch, null,\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/', component: home_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/about', component: about_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/add', component: add_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/dataset', component: main_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/dataset/', component: main_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: \"/dataset\", component: dataset_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/resources', component: main_2.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/resources', component: resource_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/login', component: Login_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/ntoes', component: notes_1.default })),\r\n        React.createElement(footer_1.default, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst ReactDOM = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst home_1 = __webpack_require__(/*! ./home */ \"./src/home.tsx\");\r\nconst header_1 = __webpack_require__(/*! ./HeaderFooter/header */ \"./src/HeaderFooter/header.tsx\");\r\nconst footer_1 = __webpack_require__(/*! ./HeaderFooter/footer */ \"./src/HeaderFooter/footer.tsx\");\r\nconst main_1 = __webpack_require__(/*! ./datasets/main */ \"./src/datasets/main.tsx\");\r\nconst about_1 = __webpack_require__(/*! ./about */ \"./src/about.tsx\");\r\nconst add_1 = __webpack_require__(/*! ./Add/add */ \"./src/Add/add.tsx\");\r\nconst dataset_1 = __webpack_require__(/*! ./datasets/dataset */ \"./src/datasets/dataset.tsx\");\r\nconst main_2 = __webpack_require__(/*! ./Resources/main */ \"./src/Resources/main.tsx\");\r\nconst resource_1 = __webpack_require__(/*! ./Resources/resource */ \"./src/Resources/resource.tsx\");\r\nconst notes_1 = __webpack_require__(/*! ./Notes/notes */ \"./src/Notes/notes.tsx\");\r\nconst Login_1 = __webpack_require__(/*! ./Login/Login */ \"./src/Login/Login.tsx\");\r\nconst main_3 = __webpack_require__(/*! ./student/main */ \"./src/student/main.tsx\");\r\nconst dictonary_1 = __webpack_require__(/*! ./student/dictonary */ \"./src/student/dictonary.tsx\");\r\nfunction Root() {\r\n    return (React.createElement(react_router_dom_1.BrowserRouter, null,\r\n        React.createElement(header_1.default, null),\r\n        React.createElement(react_router_dom_1.Switch, null,\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/', component: home_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/about', component: about_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/add', component: add_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/dataset', component: main_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/dataset/', component: main_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: \"/dataset\", component: dataset_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/resources', component: main_2.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/resources', component: resource_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/login', component: Login_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/notes', component: notes_1.default }),\r\n            React.createElement(react_router_dom_1.Route, { exact: true, path: '/tools', component: main_3.default }),\r\n            React.createElement(react_router_dom_1.Route, { path: '/tools/dictionary', component: dictonary_1.default })),\r\n        React.createElement(footer_1.default, null)));\r\n}\r\nReactDOM.render(React.createElement(Root, null), document.getElementById('root'));\r\n\n\n//# sourceURL=webpack://frontend/./src/index.tsx?");
+
+/***/ }),
+
+/***/ "./src/student/dictonary.tsx":
+/*!***********************************!*
+  !*** ./src/student/dictonary.tsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst axios_1 = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Dict() {\r\n    const [word, setWord] = React.useState(\"\");\r\n    const [definition, setDefinition] = React.useState(\"\");\r\n    const [example, setExample] = React.useState(\"\");\r\n    const [synonymns, setSynonymns] = React.useState();\r\n    function getWordData() {\r\n        axios_1.default.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then(res => {\r\n            console.log(res.data[0]);\r\n            setDefinition(res.data[0].meanings[0].definitions[0].definition);\r\n            setExample(res.data[0].meanings[0].definitions[0].example);\r\n            setSynonymns(res.data[0].meanings[0].definitions[0].synonyms.toString());\r\n            console.log(synonymns);\r\n        });\r\n    }\r\n    return (React.createElement(\"div\", { className: 'page-div' },\r\n        React.createElement(\"h1\", null, \"Dictionary\"),\r\n        React.createElement(\"input\", { value: word, placeholder: \"Type your word Here\", onChange: function (e) { setWord(e.target.value); } }),\r\n        React.createElement(\"p\", { onClick: getWordData, className: 'button' }, \"Search English Dictionary\"),\r\n        React.createElement(\"div\", { className: 'dict-div' },\r\n            React.createElement(\"h2\", null, \"Definition\"),\r\n            React.createElement(\"p\", null, definition),\r\n            React.createElement(\"h2\", null, \"Example\"),\r\n            React.createElement(\"p\", null, example),\r\n            React.createElement(\"h2\", null, \"Synonymns\"),\r\n            React.createElement(\"p\", null, synonymns))));\r\n}\r\nexports.default = Dict;\r\n\n\n//# sourceURL=webpack://frontend/./src/student/dictonary.tsx?");
+
+/***/ }),
+
+/***/ "./src/student/main.tsx":
+/*!******************************!*
+  !*** ./src/student/main.tsx ***!
+  \******************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.ShowDataset = void 0;\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst listOfStudentTools = [\r\n    {\r\n        title: 'Calculator',\r\n        link: 'calculator'\r\n    },\r\n    {\r\n        title: 'Dictionary',\r\n        link: 'dictionary'\r\n    },\r\n];\r\nfunction ShowDataset(props) {\r\n    let out = [];\r\n    for (let i = 0; i < props.arr.length; i++) {\r\n        out.push(React.createElement(\"a\", { href: `/tools/${props.arr[i].link}`, className: 'dataset-button' }, props.arr[i].title));\r\n    }\r\n    return out;\r\n}\r\nexports.ShowDataset = ShowDataset;\r\nfunction Main() {\r\n    return (React.createElement(\"div\", { className: 'page-div' },\r\n        React.createElement(\"h1\", null, \"Student Tools\"),\r\n        React.createElement(\"p\", null, \"One place for daily student resources\"),\r\n        React.createElement(\"div\", { className: 'datasets-list' },\r\n            React.createElement(ShowDataset, { arr: listOfStudentTools }))));\r\n}\r\nexports.default = Main;\r\n\n\n//# sourceURL=webpack://frontend/./src/student/main.tsx?");
 
 /***/ }),
 

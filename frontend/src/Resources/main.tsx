@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-interface source {
+export interface source {
     title: string,
     path: string,
 }
@@ -33,7 +33,7 @@ const resources: source[] = [
     },
 
 ]
-function Options(props: { arr: source[] }): any {
+export function Options(props: { arr: source[] }): any {
     let out = []
     for (let i = 0; i < props.arr.length; i++) {
         out.push(<a className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)

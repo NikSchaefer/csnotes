@@ -53,6 +53,10 @@ header, footer {
     align-items: center;
 }
 
+header {
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.178);
+}
+
 footer {
     padding: 20px 3%;
     justify-content: space-between;
@@ -96,6 +100,7 @@ footer>p>a:hover {
 
 .button {
     background-color: var(--dark-blue);
+    margin: unset auto;
     padding: 20px;
     margin: 10px 20px;
     color: white;
@@ -237,7 +242,7 @@ h1 {
     flex-direction: column;
     font-size: 20px;
     padding: 100px 0;
-    min-height: 70vh;
+    min-height: 73vh;
 }
 
 .legend-div {
@@ -342,4 +347,18 @@ h1 {
 
 .login {
     background-color: var(--blue);
+}
+
+.dict-div {
+    font-size: 23px;
+    margin: auto;
+    max-width: 800px;
+    min-width: 500px;
+    text-align: left;
+}
+
+.page-div>input {
+    text-align: center;
+    padding: 8px 20px;
+    border: rgba(0, 0, 0, 0.459) 2px solid;
 }

@@ -3,17 +3,20 @@ import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './home'
-import Header from './header'
-import Footer from './footer'
+import Header from './HeaderFooter/header'
+import Footer from './HeaderFooter/footer'
 import DatasetView from './datasets/main'
 import About from './about'
-import Add from './add'
+import Add from './Add/add'
 import Dataset from './datasets/dataset'
 import ResourceMain from './Resources/main'
 import Resoucre from './Resources/resource'
 
 import Note from './Notes/notes'
-import Login from './Login'
+import Login from './Login/Login'
+
+import StudentTools from './student/main'
+import Dict from './student/dictonary'
 
 function Root() {
     return (
@@ -35,8 +38,11 @@ function Root() {
 
                 <Route path='/login' component={Login} />
 
-                <Route path='/ntoes' component={Note} />
+                <Route path='/notes' component={Note} />
 
+
+                <Route exact path='/tools' component={StudentTools} />
+                <Route path='/tools/dictionary' component={Dict} />
 
             </Switch>
             <Footer />
