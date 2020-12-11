@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from 'react-router-dom'
 import { listOfDatasets, sets } from './datasets/main'
+import { ShowStudentTools } from './student/main'
 function ShowDatasets(props: { array: sets[] }): any {
     let out: any[] = []
     for (let i: number = 0; i < 3; i++) {
@@ -8,6 +9,16 @@ function ShowDatasets(props: { array: sets[] }): any {
     }
     return out
 }
+const listOfStudentTools: sets[] = [
+    {
+        title: 'Calculator',
+        link: 'calculator'
+    },
+    {
+        title: 'Dictionary',
+        link: 'dictionary'
+    },
+]
 
 export const listOfTools: sets[] = [
     {
@@ -65,6 +76,13 @@ export default function Home() {
                     <Link className='dataset-view' to='/dataset'>View More</Link>
                 </div>
                 <h1>Datasets</h1>
+            </div>
+            <div>
+                <h1>Student Tools</h1>
+                <p>One place for daily student resources</p>
+                <div className='datasets-list'>
+                    <ShowStudentTools arr={listOfStudentTools} />
+                </div>
             </div>
             <div className='home-contribute'>
                 <h1>Contributing</h1>

@@ -13,7 +13,7 @@ const listOfStudentTools: sets[] = [
         link: 'dictionary'
     },
 ]
-export function ShowDataset(props: { arr: sets[] }): any {
+export function ShowStudentTools(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
         out.push(<a href={`/tools/${props.arr[i].link}`} className='dataset-button'>{props.arr[i].title}</a>)
@@ -26,7 +26,7 @@ export default function Main() {
             <h1>Student Tools</h1>
             <p>One place for daily student resources</p>
             <div className='datasets-list'>
-                <ShowDataset arr={listOfStudentTools} />
+                <ShowStudentTools arr={listOfStudentTools} />
             </div>
         </div>
     )
