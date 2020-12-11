@@ -18,7 +18,7 @@ export default function Dict() {
         })
     }
     return (
-        <div className='tool-div'>
+        <div className='page-div'>
             <h1>Dictionary</h1>
             <input value={word} placeholder="Type your word Here"
                 onChange={function (e) { setWord(e.target.value) }} />
