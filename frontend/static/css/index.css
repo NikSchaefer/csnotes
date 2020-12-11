@@ -352,13 +352,15 @@ h1 {
 .dict-div {
     font-size: 23px;
     margin: auto;
-    max-width: 800px;
-    min-width: 500px;
+    max-width: 600px;
+    width: 100%;
     text-align: left;
 }
 
 .page-div>input {
     text-align: center;
     padding: 8px 20px;
+    font-size: 30px;
+    outline-width: 0;
     border: rgba(0, 0, 0, 0.459) 2px solid;
 }

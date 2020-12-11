@@ -13,7 +13,6 @@ const listOfStudentTools: sets[] = [
         link: 'dictionary'
     },
 ]
-
 export function ShowDataset(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
@@ -21,7 +20,6 @@ export function ShowDataset(props: { arr: sets[] }): any {
     }
     return out
 }
-
 export default function Main() {
     return (
         <div className='page-div'>

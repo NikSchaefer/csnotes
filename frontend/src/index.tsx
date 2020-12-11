@@ -17,6 +17,7 @@ import Login from './Login/Login'
 
 import StudentTools from './student/main'
 import Dict from './student/dictonary'
+import Calc from './student/calc'
 
 function Root() {
     return (
@@ -40,9 +41,9 @@ function Root() {
 
                 <Route path='/notes' component={Note} />
 
-
                 <Route exact path='/tools' component={StudentTools} />
                 <Route path='/tools/dictionary' component={Dict} />
+                <Route path='/tools/calculator' component={Calc} />
 
             </Switch>
             <Footer />

@@ -14,8 +14,7 @@ export default function Dict() {
             console.log(res.data[0])
             setDefinition(res.data[0].meanings[0].definitions[0].definition)
             setExample(res.data[0].meanings[0].definitions[0].example)
-            setSynonymns(res.data[0].meanings[0].definitions[0].synonyms.toString())
-            console.log(synonymns)
+            setSynonymns(res.data[0].meanings[0].definitions[0].synonyms.join(", "))
         })
     }
     return (
