@@ -14,6 +14,7 @@ import Resoucre from './Resources/resource'
 
 import Note from './Notes/notes'
 import Login from './Login/Login'
+import SignUp from './Login/SignUp'
 
 import StudentTools from './student/main'
 import Dict from './student/dictonary'
@@ -38,6 +39,7 @@ function Root() {
                 <Route path='/resources' component={Resoucre} />
 
                 <Route path='/login' component={Login} />
+                <Route path='/signup' component={SignUp} />
 
                 <Route path='/notes' component={Note} />
 
