@@ -1,3 +1,3 @@
 # CS Notes
 
-in development
+# Contributing
