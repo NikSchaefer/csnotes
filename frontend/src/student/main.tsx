@@ -9,7 +9,7 @@ const listOfStudentTools: sets[] = [
         link: 'calculator'
     },
     {
-        title: 'Dictionary',
+        title: 'English Dictionary',
         link: 'dictionary'
     },
 ]

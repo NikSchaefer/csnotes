@@ -363,3 +363,25 @@ h1 {
     outline-width: 0;
     border: rgba(0, 0, 0, 0.459) 2px solid;
 }
+
+.about-div {
+    font-size: 21px;
+    padding: 100px 0;
+    min-height: 73vh;
+    max-width: 550px;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+}
+
+.text {
+    letter-spacing: -0.003em;
+    line-height: 38px;
+    color: rgba(41, 41, 41, 1);
+    font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+    word-break: break-word;
+}
+
+h2 {
+    font-weight: 400;
+}
