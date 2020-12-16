@@ -48,10 +48,10 @@ function Links(props: { arr: links[] }): any {
     let out: any[] = []
     for (let i: number = 0; i < props.arr.length; i++) {
         out.push(
-            <div className='tool-link-div' >
+            <a href={props.arr[i].link} className='tool-link-div' >
                 <p className='tool-link-title'>{props.arr[i].title}</p>
                 <p>{props.arr[i].description}</p>
-            </div>
+            </a>
         )
     }
     return out;
