@@ -5,7 +5,7 @@ export default function About() {
         <div className="about-div">
             <h1>About This Project</h1>
             <p className='text'>
-                {"{{ Title }}"} 
+                {"{{ Title }}"}
             </p>
             <h2>Contact</h2>
             <p className='text'>

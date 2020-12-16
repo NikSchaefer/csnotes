@@ -391,7 +391,7 @@ h2 {
 }
 
 .tool-link-div {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.356);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
     display: flex;
     margin: 20px auto;
     padding: 5px 20px;
