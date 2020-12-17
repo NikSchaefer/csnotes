@@ -379,9 +379,11 @@ h1 {
 }
 
 .page-div>input {
+    margin: 50px 0;
     text-align: center;
-    padding: 8px 20px;
-    font-size: 30px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-size: 25px;
     outline-width: 0;
     border: rgba(0, 0, 0, 0.459) 2px solid;
 }
