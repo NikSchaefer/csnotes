@@ -66,6 +66,7 @@ footer {
 
 footer>p>a {
     text-decoration: underline;
+    font-weight: 500;
 }
 
 footer>p>a:hover {

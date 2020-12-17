@@ -18,7 +18,7 @@ function ShowDatasets(props: { array: sets[] }): any {
 function ResContent(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i: number = 0; i < props.arr.length; i++) {
-        out.push(<a href={`/resources/${props.arr[i].path}`} className='home-res-link'>{props.arr[i].title}</a>)
+        out.push(<a href={`/resources/${props.arr[i].path}`} key={props.arr[i].title} className='home-res-link'>{props.arr[i].title}</a>)
     }
     return out
 }

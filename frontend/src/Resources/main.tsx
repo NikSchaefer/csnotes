@@ -32,7 +32,7 @@ export const setOfResources: sets[] = [
 export function Options(props: { arr: sets[] }): any {
     let out = []
     for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)
+        out.push(<a key={props.arr[i].title} className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)
     }
     return out
 }

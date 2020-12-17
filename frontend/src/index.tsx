@@ -49,7 +49,7 @@ function Root() {
 
             </Switch>
             <Footer />
-        </Router>
+        </Router >
     )
 }
 ReactDOM.render(<Root />, document.getElementById('root'))
