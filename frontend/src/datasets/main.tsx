@@ -22,7 +22,6 @@ export const listOfDatasets: sets[] = [
         path: 'coding-university/201'
     }
 ]
-
 export function ShowDataset(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
