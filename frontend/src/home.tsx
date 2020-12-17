@@ -83,6 +83,7 @@ export default function Home() {
                 <div className='datasets-list'>
                     <ShowStudentTools arr={listOfStudentTools} />
                 </div>
+                <Link to='/tools'>View Other Reccomended Tools</Link>
             </div>
             <div className='home-contribute'>
                 <h1>Contributing</h1>

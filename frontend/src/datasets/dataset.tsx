@@ -3,22 +3,27 @@ import Axios from "axios";
 
 let index: number;
 let edge: number;
+let edgeHasRun = false
 export default function Dataset() {
     const url = window.location.href.replace(/\/$/, '').split('/')
     const dataset = url[url.length - 2]
 
     const [data, setData] = React.useState<any>()
     const [cardText, setCardText] = React.useState<string>('Reload the Page')
-    function getData(fetchIndex: number) {
-        Axios.get(`/api/dataset/${dataset}/${fetchIndex}?format=json`)
+    function getData(up: number) {
+        index += up
+        Axios.get(`/api/dataset/${dataset}/${index}?format=json`)
             .then(res => {
-                console.log(res.status)
+                if (!edgeHasRun) {
+                    edge = index;
+                    edgeHasRun = true
+                }
                 setData(res.data)
                 setCardText(res.data.front)
             })
             .catch(err => {
-                index += 1
-                getData(index)
+                index += up
+                getData(up)
             })
     }
     function handleFlip() {
@@ -30,30 +35,27 @@ export default function Dataset() {
     }
     function handleNext() {
         if (index < edge + 50) {
-            index++;
-            getData(index);
+            getData(1);
             return;
         }
         setCardText('Dataset Completed')
     }
     function handelPrev() {
         if (index > edge) {
-            index--
-            getData(index)
+            getData(-1)
         }
     }
     window.onload = function () {
         index = parseInt(url[url.length - 1], 10)
-        edge = index
-        getData(index)
+        getData(1)
     }
     return (
         <div className="view-dataset-div">
             <h1>{dataset} dataset</h1>
             <div className='card-div' onClick={handleFlip}>
                 <p>{cardText}</p>
+                <p className='card-bottom'>Click To Flip</p>
             </div>
-            <p>Click to Flip</p>
             <div className='button-div'>
                 <p className='button' onClick={handelPrev}>Previous</p>
                 <p className='button' onClick={handleNext}>Next</p>

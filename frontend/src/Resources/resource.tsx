@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 
 interface meta {
@@ -63,18 +62,15 @@ function OptionRow(props: { array: content[], iter: number, meta:meta }) {
         }
         return false
     }
-    console.log(props.array[props.iter].link)
         return (
-            <div className='option-div' style={{ maxWidth: width }}>
-                <a href={props.array[props.iter].link} className='option-href'
-                    style={{ width: '25%' }}
-                    onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }}>
+            <a href={props.array[props.iter].link} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
+                <div className='option-href' style={{ width: '25%' }}>
                     <img src={props.array[props.iter].img_source} alt="" className='option-img' />
                     {props.array[props.iter].product}
-                </a>
+                </div>
                 <p className='option-type'>{props.array[props.iter].product_type}</p>
                 {FreeImg()}
-            </div>
+            </a>
         )
     }
 function Options(props: {meta:meta, array: content[], columns: string[]}):any {
@@ -102,7 +98,7 @@ export default function Page() {
             <h1>{currentTool.meta.product}</h1>
             <Legend meta={currentTool.meta} />
             <Options meta={currentTool.meta} columns={currentTool.meta.columns} array={currentTool.content} />
-            Don't see certain tools? <NavLink to='/about'>Contribute to the list</NavLink>
+            Don't see certain tools? <a href='/about'>Contribute to the list</a>
         </div>
     )
 }

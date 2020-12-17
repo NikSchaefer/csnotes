@@ -7,6 +7,7 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     color: rgb(68, 68, 68);
     font-size: 20px;
+    background-color: rgb(250, 250, 250);
 }
 
 ::selection {
@@ -35,6 +36,7 @@ body::-webkit-scrollbar-thumb {
 :root {
     --blue: rgb(70, 88, 255);
     --dark-blue: rgb(60, 73, 196);
+    --gray: #2f3545;
 }
 
 a {
@@ -215,18 +217,35 @@ h1 {
 }
 
 .card-div {
+    
     width: 95%;
     max-width: 700px;
     min-height: 400px;
     margin: 100px auto;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.651);
+    padding: 0 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     height: fit-content;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.151);
+}
+
+.card-div:hover {
+    cursor: pointer;
+}
+
+.card-bottom {
+    background-color: var(--gray);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 20px;
+    width: 100%;
 }
 
 .view-dataset-div {
@@ -253,18 +272,14 @@ h1 {
 }
 
 .option-href {
-    border-bottom: solid transparent 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 60%;
 }
 
-.option-href:hover {
-    border-bottom: solid rgb(0, 153, 255) 2px;
-}
-
 .option-div {
+    border-bottom: solid transparent 2px;
     display: flex;
     width: 90%;
     max-width: 300px;
@@ -272,6 +287,10 @@ h1 {
     margin: 20px 0;
     align-items: center;
     font-size: 20px;
+}
+
+.option-div:hover {
+    border-bottom: solid rgb(0, 153, 255) 2px;
 }
 
 .option-type {
@@ -404,6 +423,7 @@ h2 {
     background-color: var(--blue);
     transition: all ease-in-out 0.3s;
     color: white;
+    transform: scale(0.9);
 }
 
 .tool-link-div:hover {
