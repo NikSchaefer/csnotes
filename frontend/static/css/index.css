@@ -217,7 +217,6 @@ h1 {
 }
 
 .card-div {
-    
     width: 95%;
     max-width: 700px;
     min-height: 400px;
@@ -250,6 +249,10 @@ h1 {
 
 .view-dataset-div {
     padding: 100px
+}
+
+.view-dataset-div>h1 {
+    text-transform: capitalize;
 }
 
 /* Page */
@@ -433,4 +436,11 @@ h2 {
 
 .tool-link-title {
     font-size: 23px;
+}
+
+.calc-iframe {
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
 }

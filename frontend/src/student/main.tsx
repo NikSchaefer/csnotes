@@ -10,7 +10,7 @@ interface links {
 }
 const listOfStudentTools: sets[] = [
     {
-        title: 'Calculator',
+        title: 'Scientific Calculator',
         link: 'calculator'
     },
     {
