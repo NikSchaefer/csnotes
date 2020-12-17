@@ -8,7 +8,7 @@ interface links {
     description: string,
     link: string,
 }
-const listOfStudentTools: sets[] = [
+export const listOfStudentTools: sets[] = [
     {
         title: 'Scientific Calculator',
         link: 'calculator'

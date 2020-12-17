@@ -1,12 +1,8 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { sets } from '../home'
 
-export interface source {
-    title: string,
-    path: string,
-}
-
-const resources: source[] = [
+export const resources: sets[] = [
     {
         title: 'Frontend Frameworks',
         path: '/resources/frontend'
@@ -33,7 +29,7 @@ const resources: source[] = [
     },
 
 ]
-export function Options(props: { arr: source[] }): any {
+export function Options(props: { arr: sets[] }): any {
     let out = []
     for (let i = 0; i < props.arr.length; i++) {
         out.push(<a className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)

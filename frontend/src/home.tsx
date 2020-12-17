@@ -1,60 +1,28 @@
 import * as React from "react";
 import { Link } from 'react-router-dom'
-import { listOfDatasets, sets } from './datasets/main'
-import { ShowStudentTools } from './student/main'
+import { listOfDatasets } from './datasets/main'
+import { ShowStudentTools, listOfStudentTools } from './student/main'
+import { resources } from './Resources/main'
+
+export interface sets {
+    title: string,
+    path: string,
+}
 function ShowDatasets(props: { array: sets[] }): any {
     let out: any[] = []
     for (let i: number = 0; i < 3; i++) {
-        out.push(<a key={props.array[i].title} className='dataset-link' href={`dataset/${props.array[i].link}`}>{props.array[i].title}</a>)
+        out.push(<a key={props.array[i].title} className='dataset-link' href={`dataset/${props.array[i].path}`}>{props.array[i].title}</a>)
     }
     return out
 }
-const listOfStudentTools: sets[] = [
-    {
-        title: 'Calculator',
-        link: 'calculator'
-    },
-    {
-        title: 'Dictionary',
-        link: 'dictionary'
-    },
-]
-
-export const listOfTools: sets[] = [
-    {
-        title: 'Frontend Frameworks',
-        link: 'frontend'
-    },
-    {
-        title: 'Backend Frameworks',
-        link: 'backend'
-    },
-    {
-        title: 'Hosting',
-        link: 'hosting'
-    },
-    {
-        title: 'Databases',
-        link: 'database'
-    },
-    {
-        title: 'Analytics',
-        link: 'analytics'
-    },
-    {
-        title: 'Authentication',
-        link: 'auth'
+function ResContent(props: { arr: sets[] }): any {
+    let out: any[] = []
+    for (let i: number = 0; i < props.arr.length; i++) {
+        out.push(<a href={`/resources/${props.arr[i].path}`} className='home-res-link'>{props.arr[i].title}</a>)
     }
-]
-
+    return out
+}
 export default function Home() {
-    function ResContent(props: { arr: sets[] }): any {
-        let out: any[] = []
-        for (let i: number = 0; i < props.arr.length; i++) {
-            out.push(<a href={`/resources/${props.arr[i].link}`} className='home-res-link'>{props.arr[i].title}</a>)
-        }
-        return out
-    }
     return (
         <div>
             <div className='home-colored'>
@@ -65,7 +33,7 @@ export default function Home() {
                 <h1>Resources</h1>
                 <p>Compare the best Tools and frameworks to build your projects</p>
                 <div className='home-res-div'>
-                    <ResContent arr={listOfTools} />
+                    <ResContent arr={resources} />
                 </div>
                 <Link to='/resources' className='dataset-view'>View More</Link>
             </div>

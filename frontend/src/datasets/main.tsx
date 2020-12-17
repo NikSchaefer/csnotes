@@ -1,37 +1,32 @@
 import * as React from "react";
-
-export interface sets {
-    title: string,
-    link: string
-}
-
+import { sets } from '../home'
 export const listOfDatasets: sets[] = [
     {
         title: 'Bits and Bytes',
-        link: 'coding-university/1'
+        path: 'coding-university/1'
     },
     {
         title: 'Trees, Sorting',
-        link: 'coding-university/51'
+        path: 'coding-university/51'
     },
     {
         title: 'Hash, logarithm, trees',
-        link: 'coding-university/101'
+        path: 'coding-university/101'
     },
     {
         title: 'Nodes, Graph Theory, complexity, data structures',
-        link: 'coding-university/151'
+        path: 'coding-university/151'
     },
     {
         title: 'Codeless Questions, Python, Probabilty',
-        link: 'coding-university/201'
+        path: 'coding-university/201'
     }
 ]
 
 export function ShowDataset(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a href={`/dataset/${props.arr[i].link}`} className='dataset-button'>{props.arr[i].title}</a>)
+        out.push(<a href={`/dataset/${props.arr[i].path}`} className='dataset-button'>{props.arr[i].title}</a>)
     }
     return out
 }
