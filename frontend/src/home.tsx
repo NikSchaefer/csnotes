@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Link } from 'react-router-dom'
 import { listOfDatasets } from './datasets/main'
-import { ShowStudentTools, listOfStudentTools } from './student/main'
-import { resources } from './Resources/main'
+import { ShowStudentTools, setOfTools } from './student/main'
+import { setOfResources } from './Resources/main'
 
 export interface sets {
     title: string,
@@ -33,7 +33,7 @@ export default function Home() {
                 <h1>Resources</h1>
                 <p>Compare the best Tools and frameworks to build your projects</p>
                 <div className='home-res-div'>
-                    <ResContent arr={resources} />
+                    <ResContent arr={setOfResources} />
                 </div>
                 <Link to='/resources' className='dataset-view'>View More</Link>
             </div>
@@ -49,7 +49,7 @@ export default function Home() {
                 <h1>Student Tools</h1>
                 <p>One place for daily student resources</p>
                 <div className='datasets-list'>
-                    <ShowStudentTools arr={listOfStudentTools} />
+                    <ShowStudentTools arr={setOfTools} />
                 </div>
                 <Link to='/tools'>View Other Reccomended Tools</Link>
             </div>

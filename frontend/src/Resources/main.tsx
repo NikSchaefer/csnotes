@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { sets } from '../home'
 
-export const resources: sets[] = [
+export const setOfResources: sets[] = [
     {
         title: 'Frontend Frameworks',
         path: '/resources/frontend'
@@ -42,7 +42,7 @@ export default function Main() {
         <div className='resource-home'>
             <h1>Resources</h1>
             <div className='home-option-div'>
-                <Options arr={resources} />
+                <Options arr={setOfResources} />
                 <Link to='/about'>Contribute to the list</Link>
             </div>
         </div>

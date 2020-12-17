@@ -1,31 +1,20 @@
 import * as React from 'react'
-interface sets {
-    title: string,
-    link: string
-}
+import { sets } from '../home'
 interface links {
     title: string,
     description: string,
     link: string,
 }
-export const listOfStudentTools: sets[] = [
+export const setOfTools: sets[] = [
     {
         title: 'Scientific Calculator',
-        link: 'calculator'
+        path: 'calculator'
     },
     {
         title: 'English Dictionary',
-        link: 'dictionary'
+        path: 'dictionary'
     },
 ]
-export function ShowStudentTools(props: { arr: sets[] }): any {
-    let out: any[] = []
-    for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a href={`/tools/${props.arr[i].link}`} className='dataset-button'>{props.arr[i].title}</a>)
-    }
-    return out
-}
-
 const OtherLinks: links[] = [
     {
         title: 'Easybib',
@@ -43,7 +32,13 @@ const OtherLinks: links[] = [
         link: 'https://math.microsoft.com/en'
     }
 ]
-
+export function ShowStudentTools(props: { arr: sets[] }): any {
+    let out: any[] = []
+    for (let i = 0; i < props.arr.length; i++) {
+        out.push(<a href={`/tools/${props.arr[i].path}`} className='dataset-button'>{props.arr[i].title}</a>)
+    }
+    return out
+}
 function Links(props: { arr: links[] }): any {
     let out: any[] = []
     for (let i: number = 0; i < props.arr.length; i++) {
@@ -62,11 +57,9 @@ export default function Main() {
             <h1>Student Tools</h1>
             <p>One place for daily student resources</p>
             <div className='datasets-list'>
-                <ShowStudentTools arr={listOfStudentTools} />
+                <ShowStudentTools arr={setOfTools} />
             </div>
-            <h2>
-                Other Reccomended Tools
-            </h2>
+            <h2>Other Reccomended Tools</h2>
             <div className='links-list'>
                 <Links arr={OtherLinks} />
             </div>
