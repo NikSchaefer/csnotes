@@ -28,28 +28,28 @@ export default function Home() {
                 <div className='home-res-div'>
                     <Options arr={setOfResources} />
                 </div>
-                <Link to='/resources' className='dataset-view'>View More</Link>
+                <Link to='/resources' className='button'>View More</Link>
             </div>
-
+            <div className='home-colored' id='home-api'>
+                <h1 style={{ flexBasis: "100%" }}>View a list of APIs</h1>
+                <img className='icon' src="/static/images/Icons/api.svg" />
+                <a href='/api' id='dark-button' className='button'>View a collective list of free APIs</a>
+            </div>
             <div className='home-div'>
+                <h1 className='full'>Datasets</h1>
                 <div className='dataset-div'>
                     <ShowDatasets array={listOfDatasets} />
                     <Link className='dataset-view' to='/dataset'>View More</Link>
                 </div>
-                <h1>Datasets</h1>
+                <img className='icon' src="/static/images/Icons/server.svg" />
             </div>
-            <div>
+            <div style={{ paddingBottom: '50px' }}>
                 <h1>Student Tools</h1>
                 <p>One place for daily student resources</p>
                 <div className='datasets-list'>
                     <ShowStudentTools arr={setOfTools} />
                 </div>
-                <Link to='/tools'>View Other Reccomended Tools</Link>
-            </div>
-            <div className='home-contribute'>
-                <h1>Contributing</h1>
-                <Link to='/add' className='button'>Add your own Dataset</Link>
-                <p>Contribute on <a href='https://github.com/NikSchaefer/csnotes'>Github</a></p>
+                <Link to='/tools' className='button'>View Other Reccomended Tools</Link>
             </div>
         </div>
     )

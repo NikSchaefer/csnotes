@@ -50,8 +50,8 @@ export default function Dataset() {
         getData(1)
     }
     return (
-        <div className="view-dataset-div">
-            <h1>{dataset} dataset</h1>
+        <div className="page-div">
+            <h1 className='capitalize'>{dataset} dataset</h1>
             <div className='card-div' onClick={handleFlip}>
                 <p>{cardText}</p>
                 <p className='card-bottom'>Click To Flip</p>

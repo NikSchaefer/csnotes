@@ -104,7 +104,7 @@ footer>p>a:hover {
 
 .button {
     background-color: var(--dark-blue);
-    padding: 20px;
+    padding: 20px 30px;
     margin: 10px 20px;
     color: white;
     border-radius: 10px;
@@ -182,7 +182,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     max-width: 800px;
-    margin: auto;
+    margin: 20px auto;
     justify-content: center;
     color: white;
 }
@@ -249,12 +249,29 @@ h1 {
     width: 100%;
 }
 
-.view-dataset-div {
-    padding: 100px
+#home-api {
+    margin-top: 100px;
 }
 
-.view-dataset-div>h1 {
+.full {
+    flex-basis: 100%;
+}
+
+.capitalize {
     text-transform: capitalize;
+}
+
+.icon {
+    background-color: white;
+    border-radius: 100%;
+}
+
+#dark-button {
+    background-color: var(--blue);
+}
+
+#dark-button:hover {
+    background-color: var(--dark-blue);
 }
 
 /* Page */
@@ -322,21 +339,8 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.home-res-link {
-    width: 200px;
-    padding: 50px 10px;
-    height: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.527);
-    margin: 20px;
-    transition: all ease-in-out 0.3s;
-    background-color: var(--blue);
-    color: white;
-}
-
-.home-res-link:hover {
-    background-color: var(--dark-blue);
+    max-width: 1000px;
+    margin: auto;
 }
 
 .login-div {
