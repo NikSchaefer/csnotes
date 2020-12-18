@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import (Cards, Note, Analytics, Auth, Database, Hosting, Frontend, Backend)
+from .models import (Cards, Analytics, Auth, Database,
+                     Hosting, Frontend, Backend)
 # Register your models here.
 
 admin.site.register(Cards)
-admin.site.register(Note)
 
 admin.site.register(Analytics)
 admin.site.register(Auth)

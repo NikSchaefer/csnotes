@@ -20,7 +20,7 @@ export default function Home() {
         <div>
             <div className='home-colored'>
                 <h1>CS Notes</h1>
-                <p>A site dedicated to datasets of cs notes</p>
+                <p>A site dedicated to Computer Science Resources</p>
             </div>
             <div>
                 <h1>Resources</h1>

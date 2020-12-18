@@ -10,7 +10,7 @@ export const listOfDatasets: sets[] = [
         path: 'coding-university/51'
     },
     {
-        title: 'Hash, logarithm, trees',
+        title: 'Hash, trees',
         path: 'coding-university/101'
     },
     {

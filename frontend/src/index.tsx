@@ -12,7 +12,6 @@ import Dataset from './datasets/dataset'
 import ResourceMain from './Resources/main'
 import Resoucre from './Resources/resource'
 
-import Note from './Notes/notes'
 import Login from './Login/Login'
 import SignUp from './Login/SignUp'
 
@@ -43,8 +42,6 @@ function Root() {
 
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={SignUp} />
-
-                <Route path='/notes' component={Note} />
 
                 <Route exact path='/tools' component={StudentTools} />
                 <Route path='/tools/dictionary' component={Dict} />

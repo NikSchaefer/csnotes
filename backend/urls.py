@@ -1,10 +1,9 @@
 from django.urls import path
 from rest_framework import generics, response
-from .models import (Cards, Note, Analytics, Auth, Database,
+from .models import (Cards, Analytics, Auth, Database,
                      Hosting, Frontend, Backend)
 from .serializers import (
     CardSerial, AnalyticsSerial,
-    NoteSerial,
     AuthSerial, DatabaseSerial,
     FrontEndSerial, HostingSerial, BackEndSerial)  # , ToolSerializer
 # pylint: disable=no-member
@@ -20,11 +19,6 @@ def createUser(request):
 class CardView(generics.RetrieveAPIView):
     queryset = Cards.objects.all()
     serializer_class = CardSerial
-
-
-class NoteView(generics.RetrieveAPIView):
-    queryset = Note.objects.all()
-    serializer_class = NoteSerial
 
 
 class Analytics_data(generics.ListAPIView):
@@ -139,9 +133,6 @@ urlpatterns = [
     path("create/user", createUser),
 
     path('dataset/coding-university/<int:pk>', CardView.as_view()),
-
-    path('notes/<str:pk>', NoteView.as_view()),
-
 
     path('resources/analytics', Analytics_data.as_view()),
     path('resources/auth', Authentication_data.as_view()),

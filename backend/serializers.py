@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import (Cards, Note, Analytics, Auth, Database,
+from .models import (Cards, Analytics, Auth, Database,
                      Hosting, Frontend, Backend)
 # create serializers here
 
@@ -9,12 +9,6 @@ class CardSerial(serializers.ModelSerializer):
     class Meta:
         model = Cards
         fields = ('id', 'type', 'front', 'back')
-
-
-class NoteSerial(serializers.ModelSerializer):
-    class Meta:
-        model = Note
-        fields = '__all__'
 
 
 class AnalyticsSerial(serializers.ModelSerializer):
