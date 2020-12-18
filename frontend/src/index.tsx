@@ -20,6 +20,7 @@ import StudentTools from './student/main'
 import Dict from './student/dictonary'
 import Calc from './student/calc'
 
+import Api from './Resources/api'
 function Root() {
     return (
         <Router>
@@ -37,6 +38,8 @@ function Root() {
 
                 <Route exact path='/resources' component={ResourceMain} />
                 <Route path='/resources' component={Resoucre} />
+
+                <Route path='/api' component={Api} />
 
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={SignUp} />

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from 'react-router-dom'
 import { listOfDatasets } from './datasets/main'
 import { ShowStudentTools, setOfTools } from './student/main'
-import { setOfResources } from './Resources/main'
+import { setOfResources, Options } from './Resources/main'
 
 export interface sets {
     title: string,
@@ -10,15 +10,8 @@ export interface sets {
 }
 function ShowDatasets(props: { array: sets[] }): any {
     let out: any[] = []
-    for (let i: number = 0; i < 3; i++) {
+    for (let i: number = 0; i < 2; i++) {
         out.push(<a key={props.array[i].title} className='dataset-link' href={`dataset/${props.array[i].path}`}>{props.array[i].title}</a>)
-    }
-    return out
-}
-function ResContent(props: { arr: sets[] }): any {
-    let out: any[] = []
-    for (let i: number = 0; i < props.arr.length; i++) {
-        out.push(<a href={`/resources/${props.arr[i].path}`} key={props.arr[i].title} className='home-res-link'>{props.arr[i].title}</a>)
     }
     return out
 }
@@ -33,7 +26,7 @@ export default function Home() {
                 <h1>Resources</h1>
                 <p>Compare the best Tools and frameworks to build your projects</p>
                 <div className='home-res-div'>
-                    <ResContent arr={setOfResources} />
+                    <Options arr={setOfResources} />
                 </div>
                 <Link to='/resources' className='dataset-view'>View More</Link>
             </div>

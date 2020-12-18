@@ -8,7 +8,6 @@ export default function Header() {
             <Link to='/resources' className='header-link'>Resources</Link>
             <Link to='/dataset' className='header-link'>Datasets</Link>
             <Link to='/tools' className='header-link'>Student Tools</Link>
-
             <Link to='/about' className='header-link'>About</Link>
       
             <Link to='/login' className='header-link' id='header-login'>Login</Link>

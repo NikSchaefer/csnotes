@@ -1,38 +1,47 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
-import { sets } from '../home'
-
-export const setOfResources: sets[] = [
+import { links } from '../student/main'
+export const setOfResources: links[] = [
     {
         title: 'Frontend Frameworks',
-        path: '/resources/frontend'
+        link: '/resources/frontend',
+        description: 'Compare Frontend Frameworks'
     },
     {
         title: 'Backend Frameworks',
-        path: '/resources/backend'
+        link: '/resources/backend',
+        description: 'Compare Backend Frameworks'
     },
     {
         title: 'Analytics',
-        path: '/resources/analytics'
+        link: '/resources/analytics',
+        description: 'Compare Analytics Providers'
     },
     {
         title: 'Authentication',
-        path: '/resources/auth'
+        link: '/resources/auth',
+        description: 'Compare Authentication Services'
     },
     {
         title: 'Databases',
-        path: '/resources/database'
+        link: '/resources/database',
+        description: 'Compare database providers'
     },
     {
         title: 'Hosting',
-        path: '/resources/hosting'
+        link: '/resources/hosting',
+        description: 'Compare hosting providers for websites and servers'
     },
 
 ]
-export function Options(props: { arr: sets[] }): any {
+export function Options(props: { arr: links[] }): any {
     let out = []
     for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a key={props.arr[i].title} className='home-option' href={props.arr[i].path}>{props.arr[i].title}</a>)
+        out.push(
+            <a key={props.arr[i].title} className='tool-link-div' href={props.arr[i].link}>
+                <p className='tool-link-title'>{props.arr[i].title}</p>
+                <p>{props.arr[i].description}</p>
+            </a>
+        )
     }
     return out
 }
@@ -41,9 +50,8 @@ export default function Main() {
     return (
         <div className='resource-home'>
             <h1>Resources</h1>
-            <div className='home-option-div'>
+            <div className='links-list'>
                 <Options arr={setOfResources} />
-                <Link to='/about'>Contribute to the list</Link>
             </div>
         </div>
     )

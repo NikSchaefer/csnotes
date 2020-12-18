@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { sets } from '../home'
-interface links {
+export interface links {
     title: string,
     description: string,
     link: string,
