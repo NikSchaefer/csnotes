@@ -1,6 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
-
+ 
 
 class Cards(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
