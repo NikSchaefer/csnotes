@@ -31,7 +31,8 @@ export default function Home() {
                 <Link to='/resources' className='button'>View More</Link>
             </div>
             <div className='home-colored' id='home-api'>
-                <h1 style={{ flexBasis: "100%" }}>View a list of APIs</h1>
+                <h1 className='full'>View a list of APIs</h1>
+                
                 <img className='icon' src="/static/images/Icons/api.svg" />
                 <a href='/api' id='dark-button' className='button'>View a collective list of free APIs</a>
             </div>

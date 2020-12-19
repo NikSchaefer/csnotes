@@ -24,7 +24,7 @@ export const setOfResources: links[] = [
     {
         title: 'Databases',
         link: '/resources/database',
-        description: 'Compare database providers'
+        description: 'Compare Database providers'
     },
     {
         title: 'Hosting',

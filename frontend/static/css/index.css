@@ -122,7 +122,7 @@ h1 {
     font-weight: 400;
 }
 
-.home-colored, .home-div, .home-contribute {
+.home-colored, .home-div {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -143,19 +143,6 @@ h1 {
     height: 600px;
     color: white;
     background-color: var(--dark-blue);
-}
-
-.home-contribute {
-    justify-content: center;
-    padding: 50px;
-}
-
-.home-contribute>h1 {
-    flex-basis: 100%;
-}
-
-.home-contribute>p>a {
-    color: var(--blue)
 }
 
 .dataset-div {
@@ -404,21 +391,21 @@ h2 {
 }
 
 .tool-link-div {
-    text-align: left;
     background-color: white;
-    box-shadow: 0 8px 5px 5px rgba(0, 0, 0, 0.356);
+    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.356);
     margin: 20px 20px;
     padding: 15px 50px;
-    border-radius: 20px;
+    border-radius: 15px;
     width: 300px;
-    font-size: 18px;
-    transition: all ease-in-out 0.1s;
+    transition: all ease-in-out 0.2s;
     transform: scale(0.9);
+    position: relative;
+    top: 0;
 }
 
 .tool-link-div:hover {
     cursor: pointer;
-    background-color: rgb(247, 247, 247);
+    top: -3px;
 }
 
 .tool-link-title {
@@ -462,7 +449,7 @@ h2 {
 
 .api-links-div a {
     display: block;
-    width:200px;
+    width: 200px;
 }
 
 .api-links-div a:hover {
