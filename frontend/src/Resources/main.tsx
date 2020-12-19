@@ -31,7 +31,6 @@ export const setOfResources: links[] = [
         link: '/resources/hosting',
         description: 'Compare hosting providers for websites and servers'
     },
-
 ]
 export function Options(props: { arr: links[] }): any {
     let out = []
@@ -45,6 +44,14 @@ export function Options(props: { arr: links[] }): any {
     }
     return out
 }
+function Links(props: { list: string[] }): any {
+    let out = []
+    for (let i = 0; i < props.list.length; i++) {
+        out.push(<a href={`/api/${props.list[i]}`}>{props.list[i]}</a>)
+    }
+    return out
+}
+const indexList: string[] = ['Animals', 'Anti-Malware', 'Art&Design', 'Books', 'Business', 'Calendar', 'CloudStorage&FileSharing', 'ContinuousIntegration', 'Cryptocurrency', 'CurrencyExchange', 'DataValidation', 'Development', 'Dictionaries', 'Documents&Productivity', 'Environment', 'Events', 'Finance', 'Food&Drink', 'Games&Comics', 'Geocoding', 'Government', 'Health', 'Jobs', 'MachineLearning', 'Music', 'News', 'OpenData', 'OpenSourceProjects', 'Patent', 'Personality', 'Photography', 'Science&Math', 'Security', 'Shopping', 'Social', 'Sports&Fitness', 'TestData', 'TextAnalysis', 'Tracking', 'Transportation', 'URLShorteners', 'Vehicle', 'Video', 'Weather']
 
 export default function Main() {
     return (
@@ -52,6 +59,10 @@ export default function Main() {
             <h1>Resources</h1>
             <div className='links-list'>
                 <Options arr={setOfResources} />
+            </div>
+            <h1>List Of Free Apis</h1>
+            <div className='api-links-div'>
+                <Links list={indexList} />
             </div>
         </div>
     )

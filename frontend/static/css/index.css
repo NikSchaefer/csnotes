@@ -459,3 +459,22 @@ h2 {
     background-color: var(--gray);
     color: white;
 }
+
+.api-links-div a {
+    display: block;
+    width:200px;
+}
+
+.api-links-div a:hover {
+    color: var(--blue)
+}
+
+.api-links-div {
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

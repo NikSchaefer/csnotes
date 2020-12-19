@@ -13,13 +13,12 @@ interface data {
     content: info[]
 }
 
-
 function Table(props: { content: data[] }): any {
     function Rows(props: { arr: info[] }): any {
         let out = []
         for (let i = 0; i < props.arr.length; i++) {
             out.push(
-                <tr key={props.arr[i].name}>
+                <tr>
                     <th><a href={props.arr[i].link}>{props.arr[i].name}</a></th>
                     <td>{props.arr[i].description}</td>
                     <td>{props.arr[i].Auth}</td>
@@ -30,12 +29,10 @@ function Table(props: { content: data[] }): any {
         return out
     }
     let out = []
-    let len = props.content.length;
-
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < props.content.length; i++) {
         out.push([
             <h2>{props.content[i].name} Apis</h2>,
-            <table className='api-table'>
+            <table id={props.content[i].name} className='api-table'>
                 <thead>
                     <tr>
                         <td>Name</td>
@@ -52,16 +49,15 @@ function Table(props: { content: data[] }): any {
     }
     return out
 }
-
 export default function Api() {
-    let [content, setContent] = React.useState<data[]>([{
+    const [content, setContent] = React.useState<data[]>([{
         name: "",
         content: []
     }])
+
     async function Load() {
         Axios.get("/static/json/api.json").then(res => {
             setContent(res.data);
-            console.log(content)
         })
     }
     window.onload = function () {
@@ -70,7 +66,7 @@ export default function Api() {
     return (
         <div className='page-div'>
             <h1>APIs</h1>
-            <Table content={content} />
+            <Table content={content}/>
         </div>
     )
 }
