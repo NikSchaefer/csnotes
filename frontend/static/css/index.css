@@ -105,7 +105,7 @@ footer>p>a:hover {
 .button {
     background-color: var(--dark-blue);
     padding: 20px 30px;
-    margin: 10px 20px;
+    margin: 20px 20px;
     color: white;
     border-radius: 10px;
     transition: all ease-in-out 0.2s;
@@ -334,6 +334,7 @@ h1 {
 .resource-home {
     padding: 200px 0;
 }
+
 
 .home-res-div {
     display: flex;
