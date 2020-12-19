@@ -335,7 +335,6 @@ h1 {
     padding: 200px 0;
 }
 
-
 .home-res-div {
     display: flex;
     flex-wrap: wrap;
@@ -432,4 +431,31 @@ h2 {
     max-width: 800px;
     height: 400px;
     margin: auto;
+}
+
+.api-table {
+    text-align: left;
+    font-size: 18px;
+    table-layout: fixed;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: table;
+    background-color: var(--gray);
+    word-wrap: break-word;
+}
+
+.api-table td, .api-table th {
+    padding: 2%;
+    padding-right: 0;
+    background-color: white;
+}
+
+.api-table th:hover {
+    color: var(--blue);
+}
+
+.api-table thead tr td {
+    background-color: var(--gray);
+    color: white;
 }
