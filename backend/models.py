@@ -3,7 +3,7 @@ from django.contrib.postgres.fields import JSONField
 
 
 class Cards(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True, unique=True)
     type = models.TextField(default=u"")
     front = models.TextField()
     back = models.TextField()
