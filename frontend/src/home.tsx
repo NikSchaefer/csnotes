@@ -18,10 +18,14 @@ function ShowDatasets(props: { array: sets[] }): any {
 export default function Home() {
     return (
         <div>
-            <div className='home-colored'>
-                <h1>CS Notes</h1>
-                <p>A site dedicated to Computer Science Resources</p>
+            <div>
+                <div className='home-colored'>
+                    <h1>CS Notes</h1>
+                    <p>A site dedicated to Computer Science Resources</p>
+                </div>
+                <img className='wave' src="/static/images/Wave/Wave.svg" />
             </div>
+
             <div>
                 <h1>Resources</h1>
                 <p>Compare the best Tools and frameworks to build your projects</p>

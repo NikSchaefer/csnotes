@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
 
 :root {
     --blue: rgb(70, 88, 255);
-    --dark-blue: rgb(60, 73, 196);
+    --dark-blue: #3c49c4;
     --gray: #2f3545;
 }
 
@@ -44,8 +44,15 @@ a {
     color: inherit;
 }
 
+.wave {
+    max-width: 100%;
+    transform: rotate(180deg);
+    margin-top: -250px;
+}
+
 header, footer {
     background-color: var(--blue);
+    z-index: 50;
     width: 100%;
     box-sizing: border-box;
     padding: 10px 5%;
@@ -142,7 +149,7 @@ h1 {
 .home-colored {
     height: 600px;
     color: white;
-    background-color: var(--dark-blue);
+    background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
 }
 
 .dataset-div {
