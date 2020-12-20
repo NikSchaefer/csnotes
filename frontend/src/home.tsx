@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             <img className='wave' src="/static/images/Wave/Wave.svg" />
             <div className='column-div'>
-                <ColumnSection link='/'
+                <ColumnSection link='/dev'
                     image='/static/images/Icons/attribute.svg'
                     title='Developer Resources'
                     text='Helpful Websites for Icons, Inspiration, Website Speed Tests and more.' />
@@ -46,7 +46,7 @@ export default function Home() {
             <div className='column-div'>
                 <h1 className='full'>Datasets</h1>
                 <div>
-                    <ColumnSection link="/api"
+                    <ColumnSection link="/dataset"
                         image='/static/images/Icons/script.svg'
                         title='Datasets'
                         text='Test your knowledge of existing datasets of computer science topics or add your own' />
@@ -60,11 +60,11 @@ export default function Home() {
 
             <div className='column-div'>
                 <h2 className='full'>Student Tools</h2>
-                <ColumnSection link="/api"
+                <ColumnSection link="/student"
                     image='/static/images/Icons/brow.svg'
                     title='Our Tools'
                     text='We provide daily tools and resources that students ' />
-                <ColumnSection link="/api"
+                <ColumnSection link="/student"
                     image='/static/images/Icons/student.svg'
                     title='Reccomended Tools'
                     text="We don't have everything. View a list of reccomended Student Tools and Resources" />
@@ -77,11 +77,11 @@ export default function Home() {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corrupti distinctio tempore veniam ratione exercitationem eveniet iure non in repudiandae.  ea? </p>
                 </div>
                 <img style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/images/Icons/open.svg" />
-                <ColumnSection link="/api"
+                <ColumnSection link="/about"
                     image=''
                     title='Open Source'
                     text='As firm believers in Open Source you can find our source code below' />
-                <ColumnSection link="/api"
+                <ColumnSection link="/about"
                     image=''
                     title='Contribute'
                     text='You can support this project by adding data or contributing on Github' />

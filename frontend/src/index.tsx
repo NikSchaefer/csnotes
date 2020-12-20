@@ -23,9 +23,9 @@ import Api from './Resources/api'
 function Root() {
     return (
         <Router>
-
             <Header />
             <Switch>
+                
                 <Route exact path='/' component={Home} />
                 <Route path='/about' component={About} />
                 <Route path='/add' component={Add} />
@@ -43,9 +43,11 @@ function Root() {
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={SignUp} />
 
-                <Route exact path='/tools' component={StudentTools} />
-                <Route path='/tools/dictionary' component={Dict} />
-                <Route path='/tools/calculator' component={Calc} />
+                <Route exact path='/student' component={StudentTools} />
+                <Route exact path='/student/' component={StudentTools} />
+
+                <Route path='/student/dictionary' component={Dict} />
+                <Route path='/student/calculator' component={Calc} />
 
             </Switch>
             <Footer />
