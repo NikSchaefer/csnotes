@@ -40,7 +40,7 @@ export default function Home() {
             <div>
                 <h2>Frameworks and Providers</h2>
                 <p>Compare the best Tools and frameworks to build your projects</p>
-                <div className='home-res-div'>
+                <div className='links-list'>
                     <Options arr={setOfResources} />
                 </div>
                 <Link to='/resources' className='button'>View More</Link>
@@ -52,7 +52,7 @@ export default function Home() {
                         image='/static/images/Icons/script.svg'
                         title='Datasets'
                         text='Test your knowledge of existing datasets of computer science topics or add your own' />
-                    <div style={{ display: 'flex' }}>
+                    <div className='full' style={{ display: 'flex' }}>
                         <a href="/dataset" className='button-m'>View Existing Datasets</a>
                         <a href="/add" className='button-m'>Add your own</a>
                     </div>
@@ -60,13 +60,38 @@ export default function Home() {
                 <img style={{ width: '300px' }} className='icon' src="/static/images/Icons/node.svg" />
             </div>
 
-            <div style={{ padding: '150px 0' }}>
-                <h1>Student Tools</h1>
-                <p>One place for daily student resources</p>
-                <div className='datasets-list'>
-                    <ShowStudentTools arr={setOfTools} />
-                </div>
+            <div className='column-div'>
+                <h2 className='full'>Student Tools</h2>
+                <ColumnSection link="/api"
+                    image='/static/images/Icons/script.svg'
+                    title='Our Tools'
+                    text='We provide daily tools and resources that students ' />
+                <ColumnSection link="/api"
+                    image='/static/images/Icons/script.svg'
+                    title='Datasets'
+                    text='Test your knowledge of existing datasets of computer science topics or add your own' />
                 <Link to='/tools' className='button'>View Other Reccomended Tools</Link>
+            </div>
+
+            <div className='column-div'>
+                <div className='home-about'>
+                    <h1>Open Source!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corrupti distinctio tempore veniam ratione exercitationem eveniet iure non in repudiandae.  ea? </p>
+                </div>
+                <img style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/images/Icons/open.svg" />
+                <ColumnSection link="/api"
+                    image=''
+                    title='Open Source'
+                    text='As firm believers in Open Source you can find our source code below' />
+                <ColumnSection link="/api"
+                    image=''
+                    title='Contribute'
+                    text='You can support this project by adding data or contributing on Github' />
+                <div className='inside'>
+                    <a href="/" className='button'>Github Source Code</a>
+                    <a href="/about" className='button'>Learn more about Our Site</a>
+                </div>
+
             </div>
         </div>
     )

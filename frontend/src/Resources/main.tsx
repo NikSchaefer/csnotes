@@ -55,7 +55,7 @@ const indexList: string[] = ['Animals', 'Anti-Malware', 'Art&Design', 'Books', '
 
 export default function Main() {
     return (
-        <div className='resource-home'>
+        <div style={{ padding: '100px 0' }}>
             <h1>Resources</h1>
             <div className='links-list'>
                 <Options arr={setOfResources} />
