@@ -7,7 +7,6 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     color: rgb(68, 68, 68);
     font-size: 20px;
-    background-color: #f5f6fa;
 }
 
 ::selection {
@@ -43,9 +42,11 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
 * {
     z-index: inherit;
 }
+
 .wave {
     max-width: 100%;
     transform: rotate(180deg);
@@ -112,7 +113,12 @@ footer>p>a:hover {
     border-right: none;
 }
 
-.button {
+.button-m {
+    margin: 0;
+    font-size: 18px;
+}
+
+.button, .button-m {
     background-color: var(--dark-blue);
     padding: 20px 30px;
     margin: 20px 20px;
@@ -122,7 +128,7 @@ footer>p>a:hover {
     width: fit-content;
 }
 
-.button:hover {
+.button:hover, .button-m {
     background-color: rgb(40, 54, 173);
     cursor: pointer;
 }
@@ -132,28 +138,19 @@ h1 {
     font-weight: 400;
 }
 
-.home-colored, .home-div {
+.home-colored {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    height: 400px;
-}
-
-.home-div {
-    max-width: 800px;
-    margin: auto;
-}
-
-.home-colored>p {
-    font-size: 30px;
-}
-
-.home-colored {
     height: 600px;
     color: white;
     z-index: 10;
     background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
+}
+
+.home-colored>p {
+    font-size: 30px;
 }
 
 .dataset-div {
@@ -262,6 +259,7 @@ h1 {
 .icon {
     background-color: white;
     border-radius: 100%;
+    transform: scale(1.5);
 }
 
 #dark-button {
@@ -475,4 +473,41 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.column-section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 30px;
+    text-align: left;
+    transition: all ease-in-out 0.15s;
+}
+
+.column-section:hover {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.151);
+}
+
+.column-section img {
+    width: 100px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 10px 0;
+    color: #262626;
+}
+
+.column-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    width: 80%;
+    max-width: 1700px;
+    margin: 100px auto;
 }

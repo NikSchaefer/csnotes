@@ -15,40 +15,60 @@ function ShowDatasets(props: { array: sets[] }): any {
     }
     return out
 }
+function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
+    return (
+        <a href={props.link} className='column-section'>
+            <img alt='' src={props.image} />
+            <h3>{props.title}</h3>
+            <p>{props.text}</p>
+        </a>
+    )
+}
 export default function Home() {
     return (
         <div>
             <div className='home-colored'>
-                <h1>CS Notes</h1>
-                <p>A site dedicated to Computer Science Resources</p>
+                <div>
+                    <h1>CS Notes</h1>
+                    <p>A site dedicated to Computer Science Resources</p>
+                </div>
+                <img src="/static/images/Icons/server.svg" className='icon' />
             </div>
             <img className='wave' src="/static/images/Wave/Wave.svg" />
-
+            <div className='column-div'>
+                <ColumnSection link='/'
+                    image='/static/images/Icons/attribute.svg'
+                    title='Developer Resources'
+                    text='Helpful Websites for Icons, Inspiration, Website Speed Tests and more.' />
+                <ColumnSection link="/api"
+                    image='/static/images/Icons/api.svg'
+                    title='Api'
+                    text='View a currated list of over 600 Free APIs to fuel your projects' />
+            </div>
             <div>
-                <h1>Resources</h1>
+                <h2>Frameworks and Providers</h2>
                 <p>Compare the best Tools and frameworks to build your projects</p>
                 <div className='home-res-div'>
                     <Options arr={setOfResources} />
                 </div>
                 <Link to='/resources' className='button'>View More</Link>
             </div>
-            <div className='home-colored' id='home-api'>
-                <h1 className='full'>View a list of APIs</h1>
-                <img className='icon' src="/static/images/Icons/api.svg" />
-                <a href='/api' id='dark-button' className='button'>View a collective list of free APIs</a>
-            </div>
-            <img style={{marginTop:'-200px'}} className='wave' src="/static/images/Wave/Wave.svg" />
-
-            <div className='home-div'>
+            <div className='column-div'>
                 <h1 className='full'>Datasets</h1>
-                <div className='dataset-div'>
-                    <ShowDatasets array={listOfDatasets} />
-                    <Link className='dataset-view' to='/dataset'>View More</Link>
+                <div>
+                    <ColumnSection link="/api"
+                        image='/static/images/Icons/script.svg'
+                        title='Datasets'
+                        text='Test your knowledge of existing datasets of computer science topics or add your own' />
+                    <div style={{ display: 'flex' }}>
+                        <a href="/dataset" className='button-m'>View Existing Datasets</a>
+                        <a href="/add" className='button-m'>Add your own</a>
+                    </div>
                 </div>
-                <img className='icon' src="/static/images/Icons/server.svg" />
+                <img style={{ width: '300px' }} className='icon' src="/static/images/Icons/node.svg" />
             </div>
 
-            <div style={{ paddingBottom: '50px' }}>
+            <div style={{ padding: '150px 0' }}>
                 <h1>Student Tools</h1>
                 <p>One place for daily student resources</p>
                 <div className='datasets-list'>
