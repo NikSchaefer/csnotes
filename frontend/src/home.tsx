@@ -18,13 +18,11 @@ function ShowDatasets(props: { array: sets[] }): any {
 export default function Home() {
     return (
         <div>
-            <div>
-                <div className='home-colored'>
-                    <h1>CS Notes</h1>
-                    <p>A site dedicated to Computer Science Resources</p>
-                </div>
-                <img className='wave' src="/static/images/Wave/Wave.svg" />
+            <div className='home-colored'>
+                <h1>CS Notes</h1>
+                <p>A site dedicated to Computer Science Resources</p>
             </div>
+            <img className='wave' src="/static/images/Wave/Wave.svg" />
 
             <div>
                 <h1>Resources</h1>
@@ -36,10 +34,11 @@ export default function Home() {
             </div>
             <div className='home-colored' id='home-api'>
                 <h1 className='full'>View a list of APIs</h1>
-                
                 <img className='icon' src="/static/images/Icons/api.svg" />
                 <a href='/api' id='dark-button' className='button'>View a collective list of free APIs</a>
             </div>
+            <img style={{marginTop:'-200px'}} className='wave' src="/static/images/Wave/Wave.svg" />
+
             <div className='home-div'>
                 <h1 className='full'>Datasets</h1>
                 <div className='dataset-div'>
@@ -48,6 +47,7 @@ export default function Home() {
                 </div>
                 <img className='icon' src="/static/images/Icons/server.svg" />
             </div>
+
             <div style={{ paddingBottom: '50px' }}>
                 <h1>Student Tools</h1>
                 <p>One place for daily student resources</p>

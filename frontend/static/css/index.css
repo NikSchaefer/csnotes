@@ -43,11 +43,14 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+* {
+    z-index: inherit;
+}
 .wave {
     max-width: 100%;
     transform: rotate(180deg);
-    margin-top: -250px;
+    margin-top: -380px;
+    z-index: -1;
 }
 
 header, footer {
@@ -149,6 +152,7 @@ h1 {
 .home-colored {
     height: 600px;
     color: white;
+    z-index: 10;
     background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
 }
 
