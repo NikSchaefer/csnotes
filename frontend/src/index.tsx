@@ -9,7 +9,7 @@ import About from './about'
 import Add from './add'
 import Dataset from './datasets/dataset'
 import ResourceMain from './Resources/main'
-import Resoucre from './Resources/resource'
+import Resource from './Resources/resource'
 
 import Login from './Login/main'
 
@@ -34,7 +34,7 @@ function Root() {
                 <Route path="/dataset" component={Dataset} />
 
                 <Route exact path='/resources' component={ResourceMain} />
-                <Route path='/resources' component={Resoucre} />
+                <Route path='/resources' component={Resource} />
 
                 <Route path='/api' component={Api} />
 

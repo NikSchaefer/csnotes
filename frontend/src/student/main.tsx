@@ -35,7 +35,7 @@ const OtherLinks: links[] = [
 export function ShowStudentTools(props: { arr: sets[] }): any {
     let out: any[] = []
     for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a key={props.arr[i].title} href={`/tools/${props.arr[i].path}`} className='dataset-button'>{props.arr[i].title}</a>)
+        out.push(<a key={props.arr[i].title} href={`/student/${props.arr[i].path}`} className='dataset-button'>{props.arr[i].title}</a>)
     }
     return out
 }
