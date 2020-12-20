@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Link } from 'react-router-dom'
-import { ShowStudentTools, setOfTools } from './student/main'
 import { setOfResources, Options } from './Resources/main'
-
 export interface sets {
     title: string,
     path: string,
@@ -63,13 +61,13 @@ export default function Home() {
             <div className='column-div'>
                 <h2 className='full'>Student Tools</h2>
                 <ColumnSection link="/api"
-                    image='/static/images/Icons/script.svg'
+                    image='/static/images/Icons/brow.svg'
                     title='Our Tools'
                     text='We provide daily tools and resources that students ' />
                 <ColumnSection link="/api"
-                    image='/static/images/Icons/script.svg'
-                    title='Datasets'
-                    text='Test your knowledge of existing datasets of computer science topics or add your own' />
+                    image='/static/images/Icons/student.svg'
+                    title='Reccomended Tools'
+                    text="We don't have everything. View a list of reccomended Student Tools and Resources" />
                 <Link to='/tools' className='button'>View Other Reccomended Tools</Link>
             </div>
 
