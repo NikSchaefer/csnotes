@@ -153,26 +153,6 @@ h1 {
     font-size: 30px;
 }
 
-.dataset-div {
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
-}
-
-.dataset-view {
-    padding: 10px 0;
-    color: var(--blue)
-}
-
-.dataset-link {
-    border-bottom: solid rgb(168, 168, 168) 1px;
-    padding: 10px 50px;
-}
-
-.dataset-link:hover {
-    color: var(--blue);
-}
-
 .datasets-list {
     display: flex;
     flex-wrap: wrap;

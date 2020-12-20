@@ -1,19 +1,11 @@
 import * as React from "react";
 import { Link } from 'react-router-dom'
-import { listOfDatasets } from './datasets/main'
 import { ShowStudentTools, setOfTools } from './student/main'
 import { setOfResources, Options } from './Resources/main'
 
 export interface sets {
     title: string,
     path: string,
-}
-function ShowDatasets(props: { array: sets[] }): any {
-    let out: any[] = []
-    for (let i: number = 0; i < 2; i++) {
-        out.push(<a key={props.array[i].title} className='dataset-link' href={`dataset/${props.array[i].path}`}>{props.array[i].title}</a>)
-    }
-    return out
 }
 function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
     return (
@@ -32,7 +24,7 @@ export default function Home() {
                     <h1>CS Notes</h1>
                     <p>A site dedicated to Computer Science Resources</p>
                 </div>
-                <img src="/static/images/Icons/server.svg" className='icon' />
+                <img alt='' src="/static/images/Icons/server.svg" className='icon' />
             </div>
             <img className='wave' src="/static/images/Wave/Wave.svg" />
             <div className='column-div'>
