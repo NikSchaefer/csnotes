@@ -39,7 +39,6 @@ function Root() {
                 <Route path='/dev/api' component={Api} />
                 <Route path='/dev/' component={Resource} />
 
-                
                 <Route path='/login' component={Login} />
 
                 <Route exact path='/student' component={StudentTools} />
