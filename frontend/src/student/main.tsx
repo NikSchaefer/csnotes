@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { sets } from '../home'
+import { sets, DisplayColumns, column } from '../home'
 export interface links {
     title: string,
     description: string,
@@ -15,20 +15,20 @@ export const setOfTools: sets[] = [
         path: 'dictionary'
     },
 ]
-const OtherLinks: links[] = [
+const OtherLinks: column[] = [
     {
         title: 'Easybib',
-        description: 'Check Plagirism, Grammar, and spelling with Easybib',
+        text: 'Check Plagirism, Grammar, and spelling with Easybib',
         link: 'https://www.easybib.com/'
     },
     {
         title: 'Chegg',
-        description: 'Find solutions for homework or get textbooks',
+        text: 'Find solutions for homework or get textbooks',
         link: 'https://www.chegg.com/'
     },
     {
         title: 'Math.Microsoft',
-        description: 'Solve algebraic Math Problems',
+        text: 'Solve algebraic Math Problems',
         link: 'https://math.microsoft.com/en'
     }
 ]
@@ -60,8 +60,8 @@ export default function Main() {
                 <ShowStudentTools arr={setOfTools} />
             </div>
             <h2>Other Reccomended Tools</h2>
-            <div className='links-list'>
-                <Links arr={OtherLinks} />
+            <div className='column-box'>
+                <DisplayColumns col={OtherLinks} />
             </div>
         </div>
     )

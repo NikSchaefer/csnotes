@@ -65,8 +65,8 @@ export default function Api() {
     }
     return (
         <div className='page-div'>
-            <h1>APIs</h1>
-            <Table content={content}/>
+            <h1>API</h1>
+            <Table content={content} />
         </div>
     )
 }

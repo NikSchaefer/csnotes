@@ -4,10 +4,9 @@ function Content() {
     return (
         <div>
             <Link to='/' className='header-link'>Home</Link>
-            <Link to='/resources' className='header-link'>Resources</Link>
             <Link to='/dev' className='header-link'>Developer</Link>
-            <Link to='/dataset' className='header-link'>Datasets</Link>
             <Link to='/student' className='header-link'>Student</Link>
+            <Link to='/dataset' className='header-link'>Datasets</Link>
             <Link to='/about' className='header-link'>About</Link>
         </div>
     )

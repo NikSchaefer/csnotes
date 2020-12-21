@@ -8,8 +8,8 @@ import DatasetView from './datasets/main'
 import About from './about'
 import Add from './add'
 import Dataset from './datasets/dataset'
-import ResourceMain from './Resources/main'
-import Resource from './Resources/resource'
+import DevMain from './Dev/main'
+import Resource from './Dev/resource'
 
 import Login from './Login/main'
 
@@ -17,7 +17,7 @@ import StudentTools from './student/main'
 import Dict from './student/dictonary'
 import Calc from './student/calc'
 
-import Api from './Resources/api'
+import Api from './Dev/api'
 function Root() {
     return (
         <Router>
@@ -33,11 +33,13 @@ function Root() {
 
                 <Route path="/dataset" component={Dataset} />
 
-                <Route exact path='/resources' component={ResourceMain} />
-                <Route path='/resources' component={Resource} />
+                <Route exact path='/dev' component={DevMain} />
+                <Route exact path='/dev/' component={DevMain} />
 
-                <Route path='/api' component={Api} />
+                <Route path='/dev/api' component={Api} />
+                <Route path='/dev/' component={Resource} />
 
+                
                 <Route path='/login' component={Login} />
 
                 <Route exact path='/student' component={StudentTools} />

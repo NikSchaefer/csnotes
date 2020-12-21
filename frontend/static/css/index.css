@@ -47,6 +47,11 @@ a {
     z-index: inherit;
 }
 
+h4 {
+    font-weight: 400;
+    font-size: 30px;
+}
+
 .wave {
     max-width: 100%;
     transform: rotate(180deg);
@@ -357,38 +362,6 @@ h2 {
     font-weight: 400;
 }
 
-.links-list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-    max-width: 1600px;
-}
-
-.tool-link-div {
-    background-color: white;
-    box-shadow: 0 8px 2px rgba(0, 0, 0, 0.356);
-    margin: 20px 20px;
-    padding: 15px 50px;
-    border-radius: 15px;
-    width: 300px;
-    transition: all ease-in-out 0.2s;
-    transform: scale(0.9);
-    position: relative;
-    top: 0;
-}
-
-.tool-link-div:hover {
-    cursor: pointer;
-    top: -3px;
-}
-
-.tool-link-title {
-    font-size: 23px;
-    color: var(--blue)
-}
-
 .calc-iframe {
     width: 90%;
     max-width: 800px;
@@ -443,7 +416,7 @@ h2 {
 }
 
 .column-section {
-    margin: auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -469,7 +442,7 @@ h3 {
     color: #262626;
 }
 
-.column-div {
+.column-div, .column-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -484,4 +457,20 @@ h3 {
     width: 80%;
     margin: auto;
     font-size: 24px;
+}
+
+.column-box a h3 {
+    color: var(--blue)
+}
+
+.column-box {
+    margin: 0 auto;
+}
+
+.column-box a {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.096);
+}
+
+.column-box a:hover {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.151);
 }
