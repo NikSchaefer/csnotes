@@ -39,18 +39,6 @@ export function ShowStudentTools(props: { arr: sets[] }): any {
     }
     return out
 }
-function Links(props: { arr: links[] }): any {
-    let out: any[] = []
-    for (let i: number = 0; i < props.arr.length; i++) {
-        out.push(
-            <a href={props.arr[i].link} className='tool-link-div' key={props.arr[i].title}>
-                <p className='tool-link-title'>{props.arr[i].title}</p>
-                <p>{props.arr[i].description}</p>
-            </a>
-        )
-    }
-    return out;
-}
 export default function Main() {
     return (
         <div className='page-div'>

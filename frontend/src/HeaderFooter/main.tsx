@@ -15,7 +15,6 @@ export function Footer() {
     return (
         <footer>
             <Content />
-            <p>This is an Open source project, learn how to <Link to='/about'>contribute</Link></p>
         </footer>
     )
 }
