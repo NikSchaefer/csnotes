@@ -65,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'csnotes',
         'USER': 'postgres',
-        'PASSWORD': 'icarus',
+        'PASSWORD': env('Postgres'),
         'HOST': 'localhost',
         'PORT': '7000',
     }

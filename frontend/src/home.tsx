@@ -13,7 +13,7 @@ export interface column {
 }
 export function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
     return (
-        <a href={props.link} className='column-section'>
+        <a key={props.title} href={props.link} className='column-section'>
             <img alt='' src={props.image} />
             <h3>{props.title}</h3>
             <p>{props.text}</p>
