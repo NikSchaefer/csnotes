@@ -98,7 +98,8 @@ export default function Page() {
             <h1>{currentTool.meta.product}</h1>
             <Legend meta={currentTool.meta} />
             <Options meta={currentTool.meta} columns={currentTool.meta.columns} array={currentTool.content} />
-            Don't see certain tools? <a href='/about'>Contribute to the list</a>
+            <a className='framework-more' href='/about'>Don't see certain tools? Contribute to the list</a>
+            <a href="/dev" className='button'>Back to Frameworks and Providers</a>
         </div>
     )
 }
