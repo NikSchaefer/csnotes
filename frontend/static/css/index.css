@@ -239,14 +239,6 @@ h1 {
     transform: scale(1.5);
 }
 
-#dark-button {
-    background-color: var(--blue);
-}
-
-#dark-button:hover {
-    background-color: var(--dark-blue);
-}
-
 /* Page */
 
 .framework-more {
@@ -311,13 +303,6 @@ h1 {
 }
 
 /* Resources */
-
-.login-div {
-    min-height: 88vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .dict-div {
     font-size: 23px;

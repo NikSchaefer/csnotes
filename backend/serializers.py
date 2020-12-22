@@ -8,7 +8,7 @@ from .models import (Cards, Analytics, Auth, Database,
 class CardSerial(serializers.ModelSerializer):
     class Meta:
         model = Cards
-        fields = ('id', 'type', 'front', 'back')
+        fields = ('id', 'front', 'back')
 
 
 class AnalyticsSerial(serializers.ModelSerializer):
