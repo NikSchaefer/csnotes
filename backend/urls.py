@@ -5,7 +5,7 @@ from .models import (Cards, Analytics, Auth, Database,
 from .serializers import (
     CardSerial, AnalyticsSerial,
     AuthSerial, DatabaseSerial,
-    FrontEndSerial, HostingSerial, BackEndSerial)  # , ToolSerializer
+    FrontEndSerial, HostingSerial, BackEndSerial)  
 # pylint: disable=no-member
 
 
