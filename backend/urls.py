@@ -1,24 +1,22 @@
 from django.urls import path
 from rest_framework import generics, response
-from .models import (Cards, Analytics, Auth, Database,
+from .models import (Cards, Api, Analytics, Auth, Database,
                      Hosting, Frontend, Backend)
-from .serializers import (
-    CardSerial, AnalyticsSerial,
-    AuthSerial, DatabaseSerial,
-    FrontEndSerial, HostingSerial, BackEndSerial)  
+from .serializers import (ApiSerial,
+                          CardSerial, AnalyticsSerial,
+                          AuthSerial, DatabaseSerial,
+                          FrontEndSerial, HostingSerial, BackEndSerial)
 # pylint: disable=no-member
-
-
-def createUser(request):
-    if request.method == 'POST':
-        print('Post: "%s"' % request.POST)
-        print('Body: "%s"' % request.data)
-    return HostingSerial
 
 
 class CardView(generics.RetrieveAPIView):
     queryset = Cards.objects.all()
     serializer_class = CardSerial
+
+
+class ApiView(generics.ListAPIView):
+    queryset = Api.objects.all()
+    serializer_class = ApiSerial
 
 
 class Analytics_data(generics.ListAPIView):
@@ -130,8 +128,7 @@ class Hosting_data(generics.ListAPIView):
 
 urlpatterns = [
 
-    path("create/user", createUser),
-
+    path('api/all', ApiView.as_view()),
     path('dataset/coding-university/<int:pk>', CardView.as_view()),
 
     path('resources/analytics', Analytics_data.as_view()),

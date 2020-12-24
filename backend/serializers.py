@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from .models import (Cards, Analytics, Auth, Database,
-                     Hosting, Frontend, Backend)
+                     Hosting, Frontend, Backend, Api)
 # create serializers here
 
 
@@ -9,6 +9,12 @@ class CardSerial(serializers.ModelSerializer):
     class Meta:
         model = Cards
         fields = ('id', 'front', 'back')
+
+
+class ApiSerial(serializers.ModelSerializer):
+    class Meta:
+        model = Api
+        fields = ('type', 'name', 'link', 'description', 'Auth', 'HTTPS')
 
 
 class AnalyticsSerial(serializers.ModelSerializer):
