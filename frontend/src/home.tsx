@@ -28,7 +28,8 @@ export function DisplayColumns(props: { col: column[] }): any {
                 link={props.col[i].link}
                 image={props.col[i].image}
                 title={props.col[i].title}
-                text={props.col[i].text} />
+                text={props.col[i].text}
+                key={props.col[i].link} />
         )
     }
     return out;
@@ -37,7 +38,7 @@ const head: column[] = [
     {
         title: 'Developer Resources',
         text: 'Helpful Websites for Icons, Inspiration, Website Speed Tests and more.',
-        link: '/dev',
+        link: '/dev/#dev',
         image: '/static/images/Icons/attribute.svg'
     },
     {
@@ -67,7 +68,7 @@ export default function Home() {
                 <div className='column-box'>
                     <DisplayColumns col={setOfResources} />
                 </div>
-                <a href='/dev/#dev' className='button'>View More</a>
+                <a href='/dev/#' className='button'>View More</a>
             </div>
             <div className='column-div'>
                 <h1 className='full'>Datasets</h1>

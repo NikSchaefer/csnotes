@@ -13,7 +13,7 @@ class CardSerial(serializers.ModelSerializer):
 class ApiSerial(serializers.ModelSerializer):
     class Meta:
         model = Api
-        fields = ('type', 'name', 'link', 'description', 'Auth', 'HTTPS')
+        fields = ('name', 'link', 'description', 'Auth', 'HTTPS')
 
 
 class AnalyticsSerial(serializers.ModelSerializer):

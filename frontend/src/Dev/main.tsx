@@ -76,7 +76,7 @@ const icondata: column[] = [
 function Links(props: { list: string[] }): any {
     let out = []
     for (let i = 0; i < props.list.length; i++) {
-        out.push(<a href={`/dev/api/${props.list[i]}`}>{props.list[i]}</a>)
+        out.push(<a key={props.list[i]} href={`/dev/api/${props.list[i]}`}>{props.list[i]}</a>)
     }
     return out
 }

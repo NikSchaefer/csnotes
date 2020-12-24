@@ -133,7 +133,7 @@ class Hosting_data(generics.ListAPIView):
 
 urlpatterns = [
 
-    path('api/all', ApiView.as_view()),
+    path('api', ApiView.as_view()),
     path('dataset/coding-university/<int:pk>', CardView.as_view()),
 
     path('resources/analytics', Analytics_data.as_view()),

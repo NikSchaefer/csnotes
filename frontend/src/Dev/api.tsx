@@ -7,13 +7,7 @@ interface info {
     link: string,
     name: string,
 }
-
-interface data {
-    name: string,
-    content: info[]
-}
-
-function Table(props: { content: data[], target: string }): any {
+function Table(props: { content: info[], target: string }): any {
     function Rows(props: { arr: info[] }): any {
         let out = []
         for (let i = 0; i < props.arr.length; i++) {
@@ -28,44 +22,34 @@ function Table(props: { content: data[], target: string }): any {
         }
         return out
     }
-    let out = []
-    for (let i = 0; i < props.content.length; i++) {
-        if (props.target == props.content[i].name.replace(/\s/g, '')) {
-            out.push([
-                <h2 key={String(props.content[i])}>{props.content[i].name} Apis</h2>,
-                <table id={props.content[i].name} key={props.content[i].name} className='api-table'>
-                    <thead>
-                        <tr>
-                            <td>Name</td>
-                            <td style={{ width: "40%" }}>Description</td>
-                            <td>Auth</td>
-                            <td>HTTPS</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <Rows arr={props.content[i].content} />
-                    </tbody>
-                </table>
-            ])
-        }
-    }
-    return out
+    return (
+        <div>
+            <table className='api-table'>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td style={{ width: "40%" }}>Description</td>
+                        <td>Auth</td>
+                        <td>HTTPS</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <Rows arr={props.content} />
+                </tbody>
+            </table>
+        </div>
+    )
 }
 const win: string[] = window.location.href.split('/')
-let lastSeg: string = win[win.length - 1]
+let lastSeg: string = win[win.length - 1].replace(" ", '')
 
 if (win[win.length - 1] == "/" || win[win.length - 1] == "") {
     lastSeg = win[win.length - 2]
 }
-
 export default function Api() {
-    const [content, setContent] = React.useState<data[]>([{
-        name: "",
-        content: []
-    }])
-
+    const [content, setContent] = React.useState<info[]>([])
     async function Load() {
-        Axios.get("/static/json/api.json").then(res => {
+        Axios.get(`/api/api?type=${encodeURIComponent(lastSeg)}`).then(res => {
             setContent(res.data);
         })
     }
@@ -74,7 +58,7 @@ export default function Api() {
     }
     return (
         <div className='page-div'>
-            <h1>API</h1>
+            <h1>{lastSeg} Apis</h1>,
             <Table target={lastSeg} content={content} />
         </div>
     )
