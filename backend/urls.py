@@ -15,8 +15,13 @@ class CardView(generics.RetrieveAPIView):
 
 
 class ApiView(generics.ListAPIView):
-    queryset = Api.objects.all()
     serializer_class = ApiSerial
+    def get_queryset(self):
+        queryset = Api.objects.all()
+        type = self.request.query_params.get('type')
+        
+        queryset = queryset.filter(type=type)
+        return queryset
 
 
 class Analytics_data(generics.ListAPIView):

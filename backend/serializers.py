@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from .models import (Cards, Analytics, Auth, Database,
                      Hosting, Frontend, Backend, Api)
 # create serializers here
