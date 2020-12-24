@@ -16,6 +16,7 @@ class Cards(models.Model):
 
 
 class Tool(models.Model):
+    type = models.CharField(max_length=30, default='Hosting')
     product = models.CharField(max_length=20, default="")
     product_type = models.CharField(max_length=20, blank=True, default="")
     free_tier = models.BooleanField(default=False, blank=True)
@@ -25,9 +26,6 @@ class Tool(models.Model):
 
     def __str__(self):
         return self.product
-
-    class Meta:
-        abstract = True
 
 
 class Api(models.Model):
@@ -40,27 +38,3 @@ class Api(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Analytics(Tool):
-    pass
-
-
-class Database(Tool):
-    pass
-
-
-class Auth(Tool):
-    pass
-
-
-class Frontend(Tool):
-    pass
-
-
-class Backend(Tool):
-    pass
-
-
-class Hosting(Tool):
-    pass
