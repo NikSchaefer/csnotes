@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { DisplayColumns, column } from '../home'
-const indexList: string[] = ['Animals', 'Anti-Malware', 'Art&Design', 'Books', 'Business', 'Calendar', 'CloudStorage&FileSharing', 'ContinuousIntegration', 'Cryptocurrency', 'CurrencyExchange', 'DataValidation', 'Development', 'Dictionaries', 'Documents&Productivity', 'Environment', 'Events', 'Finance', 'Food&Drink', 'Games&Comics', 'Geocoding', 'Government', 'Health', 'Jobs', 'MachineLearning', 'Music', 'News', 'OpenData', 'OpenSourceProjects', 'Patent', 'Personality', 'Photography', 'Science&Math', 'Security', 'Shopping', 'Social', 'Sports&Fitness', 'TestData', 'TextAnalysis', 'Tracking', 'Transportation', 'URLShorteners', 'Vehicle', 'Video', 'Weather']
+export const indexList: string[] = ['Animals', 'Anti-Malware', 'Art&Design', 'Books', 'Business', 'Calendar', 'CloudStorage&FileSharing', 'ContinuousIntegration', 'Cryptocurrency', 'CurrencyExchange', 'DataValidation', 'Development', 'Dictionaries', 'Documents&Productivity', 'Environment', 'Events', 'Finance', 'Food&Drink', 'Games&Comics', 'Geocoding', 'Government', 'Health', 'Jobs', 'MachineLearning', 'Music', 'News', 'OpenData', 'OpenSourceProjects', 'Patent', 'Personality', 'Photography', 'Science&Math', 'Security', 'Shopping', 'Social', 'Sports&Fitness', 'TestData', 'TextAnalysis', 'Tracking', 'Transportation', 'URLShorteners', 'Vehicle', 'Video', 'Weather']
 export const setOfResources: column[] = [
     {
         title: 'Frontend Frameworks',

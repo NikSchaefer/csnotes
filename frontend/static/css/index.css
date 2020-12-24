@@ -369,6 +369,10 @@ h2 {
     background-color: white;
 }
 
+th {
+    font-weight: 500;
+}
+
 .api-table th:hover {
     color: var(--blue);
 }
