@@ -85,7 +85,7 @@ export default function Home() {
             <div className='column-div'>
                 <h2 className='full'>Student Tools</h2>
                 <ColumnSection link="/student" image='/static/images/Icons/brow.svg' title='Our Tools'
-                    text='We provide daily tools and resources that students ' />
+                    text='We provide daily tools and resources that students' />
                 <ColumnSection link="/student" image='/static/images/Icons/student.svg'
                     title='Reccomended Tools' text="We don't have everything. View a list of reccomended Student Tools and Resources" />
                 <Link to='/student' className='button'>View Other Reccomended Tools</Link>
