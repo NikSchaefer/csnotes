@@ -32,12 +32,12 @@ class Tool(models.Model):
 
 
 class Api(models.Model):
-    type = models.CharField(max_length=20)
-    name = models.CharField(max_length=20)
-    link = models.CharField(max_length=60)
-    description = models.TextField()
-    Auth = models.CharField(max_length=15)
-    HTTPS = models.CharField(max_length=15)
+    type = models.CharField(max_length=40, default="")
+    name = models.CharField(max_length=40, default="")
+    link = models.TextField(default="")
+    description = models.TextField(default="")
+    Auth = models.CharField(max_length=15, default="")
+    HTTPS = models.CharField(max_length=15, default="")
 
     def __str__(self):
         return self.name
