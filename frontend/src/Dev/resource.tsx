@@ -24,13 +24,13 @@ const blackTool: tool = {
         columns: [],
         path: '',
     },
-    content:[]
+    content: []
 }
 const width = '600px';
-function Legend(props:{meta:meta}) {
-    function LegendLinks(props:{array:string[]}):any {
+function Legend(props: { meta: meta }) {
+    function LegendLinks(props: { array: string[] }): any {
         let out = []
-        for (let i:number = 0; i < props.array.length; i++) {
+        for (let i: number = 0; i < props.array.length; i++) {
             out.push(<p key={props.array[i]}>{props.array[i]}</p>)
         }
         return out;
@@ -46,7 +46,7 @@ function Legend(props:{meta:meta}) {
         </div>
     )
 }
-function OptionRow(props: { array: content[], iter: number, meta:meta }) {
+function OptionRow(props: { array: content[], iter: number, meta: meta }) {
     function FreeImg() {
         if (props.meta.columns.includes('Free Tier')) {
             if (props.array[props.iter].free_tier) {
@@ -62,20 +62,20 @@ function OptionRow(props: { array: content[], iter: number, meta:meta }) {
         }
         return false
     }
-        return (
-            <a href={props.array[props.iter].link} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
-                <div className='option-href' style={{ width: '25%' }}>
-                    <img src={props.array[props.iter].img_source} alt="" className='option-img' />
-                    {props.array[props.iter].product}
-                </div>
-                <p className='option-type'>{props.array[props.iter].product_type}</p>
-                {FreeImg()}
-            </a>
-        )
-    }
-function Options(props: {meta:meta, array: content[], columns: string[]}):any {
+    return (
+        <a href={props.array[props.iter].link} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
+            <div className='option-href' style={{ width: '25%' }}>
+                <img src={props.array[props.iter].img_source} alt="" className='option-img' />
+                {props.array[props.iter].product}
+            </div>
+            <p className='option-type'>{props.array[props.iter].product_type}</p>
+            {FreeImg()}
+        </a>
+    )
+}
+function Options(props: { meta: meta, array: content[], columns: string[] }): any {
     let out = []
-    for (let i:number = 0; i < props.array.length; i++) {
+    for (let i: number = 0; i < props.array.length; i++) {
         out.push(<OptionRow meta={props.meta} iter={i} array={props.array} />)
     }
     return out
@@ -85,7 +85,7 @@ export default function Page() {
     async function getResource() {
         const url = window.location.href.replace(/\/$/, '')
         const lastSeg = url.substr(url.lastIndexOf('/') + 1)
-        axios.get(`/api/resources/${lastSeg}?format=json`).then(res => {
+        axios.get(`/api/resources?type=${encodeURIComponent(lastSeg)}`).then(res => {
             setCurrentTool(res.data)
         })
     }
