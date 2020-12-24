@@ -42,7 +42,7 @@ const head: column[] = [
     },
     {
         title: 'Api',
-        text: 'View a currated list of over 600 Free APIs to fuel your projects',
+        text: 'View a curated list of over 600 Free APIs to fuel your projects',
         link: '/dev/api/index',
         image: '/static/images/Icons/api.svg'
     }
