@@ -95,7 +95,7 @@ export default function Main() {
                 <h2 className='full'>Icons</h2>
                 <DisplayColumns col={icondata} />
             </div>
-            <h4 id="Api">Api Index</h4>
+            <h4 id="api">Api Index</h4>
             <p>Curated list of over 600 Free APIs</p>
             <div className='api-links-div'>
                 <Links list={indexList} />
