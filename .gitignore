@@ -4,3 +4,4 @@ staticfiles
 *.env
 env
 /frontend/node_modules
+/frontend/static/Images
