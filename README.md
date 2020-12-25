@@ -13,4 +13,5 @@ computer science topics, flashcards, Scientific Calculator, Dictionary and more!
   Heroku
 
 ## Contributing
-// TODO
+// TODO:
+
