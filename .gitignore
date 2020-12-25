@@ -4,5 +4,3 @@ staticfiles
 *.env
 env
 /frontend/node_modules
-/TODO.md
-/frontend/static/Images
