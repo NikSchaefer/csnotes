@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (Cards, Tool, Api)
+from .models import (Cards, Tool, Api, MetaContent)
 # create serializers here
 
 
@@ -21,3 +21,7 @@ class ToolSerial(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class MetaSerial(serializers.ModelSerializer):
+    class Meta:
+        model = MetaContent
+        fields = '__all__'

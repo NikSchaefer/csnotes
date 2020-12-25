@@ -38,3 +38,11 @@ class Api(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class MetaContent(models.Model):
+    name = models.CharField(max_length=40)
+    content = models.JSONField()
+
+    def __str__(self):
+        return self.name

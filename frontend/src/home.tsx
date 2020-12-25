@@ -39,13 +39,13 @@ const head: column[] = [
         title: 'Developer Resources',
         text: 'Helpful Websites for Icons, Inspiration, Website Speed Tests and more.',
         link: '/dev/#dev',
-        image: '/static/images/Icons/attribute.svg'
+        image: '/static/Images/Icons/attribute.svg'
     },
     {
         title: 'Api',
         text: 'View a curated list of over 600 Free APIs to fuel your projects',
         link: '/dev/#api',
-        image: '/static/images/Icons/api.svg'
+        image: '/static/Images/Icons/api.svg'
     }
 ]
 export default function Home() {
@@ -56,9 +56,9 @@ export default function Home() {
                     <h1>CS Notes</h1>
                     <p>A site dedicated to Computer Science Resources</p>
                 </div>
-                <img alt='' src="/static/images/Icons/server.svg" className='icon' />
+                <img alt='' src="/static/Images/Icons/server.svg" className='icon' />
             </div>
-            <img className='wave' src="/static/images/Wave/Wave.svg" />
+            <img className='wave' src="/static/Images/Wave/Wave.svg" />
             <div className='column-div'>
                 <DisplayColumns col={head} />
             </div>
@@ -73,21 +73,21 @@ export default function Home() {
             <div className='column-div'>
                 <h1 className='full'>Datasets</h1>
                 <div>
-                    <ColumnSection link="/dataset" image='/static/images/Icons/script.svg'
+                    <ColumnSection link="/dataset" image='/static/Images/Icons/script.svg'
                         title='Datasets' text='Test your knowledge of existing datasets of computer science topics or add your own' />
                     <div className='full' style={{ display: 'flex' }}>
                         <a href="/dataset" className='button-m'>View Existing Datasets</a>
                         <a href="/add" className='button-m'>Add your own</a>
                     </div>
                 </div>
-                <img style={{ width: '300px' }} className='icon' src="/static/images/Icons/node.svg" />
+                <img style={{ width: '300px' }} className='icon' src="/static/Images/Icons/node.svg" />
             </div>
 
             <div className='column-div'>
                 <h2 className='full'>Student Tools</h2>
-                <ColumnSection link="/student" image='/static/images/Icons/brow.svg' title='Our Tools'
+                <ColumnSection link="/student" image='/static/Images/Icons/brow.svg' title='Our Tools'
                     text='We provide daily tools and resources that students' />
-                <ColumnSection link="/student" image='/static/images/Icons/student.svg'
+                <ColumnSection link="/student" image='/static/Images/Icons/student.svg'
                     title='Reccomended Tools' text="We don't have everything. View a list of reccomended Student Tools and Resources" />
                 <Link to='/student' className='button'>View Other Reccomended Tools</Link>
             </div>
@@ -97,7 +97,7 @@ export default function Home() {
                     <h1>Open Source!</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corrupti distinctio tempore veniam ratione exercitationem eveniet iure non in repudiandae.  ea? </p>
                 </div>
-                <img style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/images/Icons/open.svg" />
+                <img style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/Images/Icons/open.svg" />
                 <ColumnSection link="/about" image='' title='Open Source'
                     text='As firm believers in Open Source you can find our source code below' />
                 <ColumnSection link="/about" image='' title='Contribute'

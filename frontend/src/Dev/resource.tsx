@@ -3,8 +3,7 @@ import axios from 'axios'
 
 interface meta {
     product: string,
-    columns: string[],
-    path: string,
+    columns: string[]
 }
 interface content {
     product: string,
@@ -12,19 +11,7 @@ interface content {
     link: string,
     product_type: string,
     free_tier?: any,
-    free_limit?: string,
-}
-interface tool {
-    meta: meta,
-    content: content[]
-}
-const blackTool: tool = {
-    meta: {
-        product: '',
-        columns: [],
-        path: '',
-    },
-    content: []
+    free_limit?: string
 }
 const width = '600px';
 function Legend(props: { meta: meta }) {
@@ -48,15 +35,15 @@ function Legend(props: { meta: meta }) {
 }
 function OptionRow(props: { array: content[], iter: number, meta: meta }) {
     function FreeImg() {
-        if (props.meta.columns.includes('Free Tier')) {
+        if (props.meta.columns.includes('Free Tier') || props.meta.columns.includes('Free_Tier')) {
             if (props.array[props.iter].free_tier) {
                 return [
-                    <img src="/static/images/Free/check.svg" className='option-free-img' alt='' />,
+                    <img src="/static/Images/Free/check.svg" className='option-free-img' alt='' />,
                     <p className='option-type'>{props.array[props.iter].free_limit}</p>
                 ]
             }
             return [
-                <img src="/static/images/Free/low.svg" className='option-free-img' alt='' />,
+                <img src="/static/Images/Free/low.svg" className='option-free-img' alt='' />,
                 <p className='option-type'>N/A</p>
             ]
         }
@@ -80,24 +67,35 @@ function Options(props: { meta: meta, array: content[], columns: string[] }): an
     }
     return out
 }
+const url = window.location.href.replace(/\/$/, '')
+const lastSeg = url.substr(url.lastIndexOf('/') + 1)
+const encoded = encodeURIComponent(lastSeg)
+
 export default function Page() {
-    const [currentTool, setCurrentTool] = React.useState<tool>(blackTool)
+    const [currentTool, setCurrentTool] = React.useState<content[]>([])
+    const [currentMeta, setCurrentMeta] = React.useState<meta>({product:'', columns:[]})
+
     async function getResource() {
-        const url = window.location.href.replace(/\/$/, '')
-        const lastSeg = url.substr(url.lastIndexOf('/') + 1)
-        axios.get(`/api/resources?type=${encodeURIComponent(lastSeg)}`).then(res => {
+        axios.get(`/api/resources?type=${encoded}`).then(res => {
             setCurrentTool(res.data)
         })
     }
+    async function getMeta() {
+        axios.get(`/api/meta?type=${encoded}`).then(res => {
+            setCurrentMeta(res.data[0].content.meta)
+        })
+    }
+
 
     window.onload = function () {
         getResource()
+        getMeta()
     }
     return (
         <div className='page-div'>
-            <h1>{currentTool.meta.product}</h1>
-            <Legend meta={currentTool.meta} />
-            <Options meta={currentTool.meta} columns={currentTool.meta.columns} array={currentTool.content} />
+            <h1>{currentMeta.product}</h1>
+            <Legend meta={currentMeta} />
+            <Options meta={currentMeta} columns={currentMeta.columns} array={currentTool} />
             <a className='framework-more' href='/about'>Don't see certain tools? Contribute to the list</a>
             <a href="/dev" className='button'>Back to Frameworks and Providers</a>
         </div>
