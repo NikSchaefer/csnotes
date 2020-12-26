@@ -289,6 +289,11 @@ h1 {
     justify-content: space-between;
 }
 
+.legend-div p {
+    font-weight: 600;
+    color: darkcyan;
+}
+
 .option-href {
     display: flex;
     justify-content: space-between;
