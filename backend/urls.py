@@ -1,7 +1,8 @@
 from django.urls import path
 from rest_framework import generics, response
-from .models import (Cards, Api, Tool, MetaContent)
-from .serializers import (ApiSerial, CardSerial, ToolSerial, MetaSerial)
+from .models import (Cards, Api, Tool, MetaContent, DevTools)
+from .serializers import (ApiSerial, CardSerial,
+                          ToolSerial, MetaSerial, DevToolsSerial)
 # pylint: disable=no-member
 
 
@@ -30,6 +31,12 @@ class Tool_data(generics.ListAPIView):
         queryset = queryset.filter(type=type)
         return queryset
 
+
+class DevTool_data(generics.ListAPIView):
+    serializer_class = DevToolsSerial
+    queryset = DevTools.objects.all()
+
+
 class MetaView(generics.ListAPIView):
     serializer_class = MetaSerial
 
@@ -45,5 +52,6 @@ urlpatterns = [
     path('api', ApiView.as_view()),
     path('dataset/coding-university/<int:pk>', CardView.as_view()),
     path('resources', Tool_data.as_view()),
+    path('devtools', DevTool_data.as_view()),
     path('meta', MetaView.as_view()),
 ]

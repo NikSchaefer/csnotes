@@ -10,8 +10,9 @@ export interface column {
     text: string,
     image?: string,
     link: string,
+    type?: string,
 }
-function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
+export function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
     return (
         <a key={props.title} href={props.link} className='column-section'>
             <img alt='' src={props.image} />

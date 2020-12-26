@@ -1,48 +1,7 @@
 import Axios from "axios"
 import * as React from "react"
-import { DisplayColumns, column } from "../home"
+import { DisplayColumns, column, ColumnSection } from "../home"
 export const indexList: string[] = ["Animals", "Anti-Malware", "Art&Design", "Books", "Business", "Calendar", "CloudStorage&FileSharing", "ContinuousIntegration", "Cryptocurrency", "CurrencyExchange", "DataValidation", "Development", "Dictionaries", "Documents&Productivity", "Environment", "Events", "Finance", "Food&Drink", "Games&Comics", "Geocoding", "Government", "Health", "Jobs", "MachineLearning", "Music", "News", "OpenData", "OpenSourceProjects", "Patent", "Personality", "Photography", "Science&Math", "Security", "Shopping", "Social", "Sports&Fitness", "TestData", "TextAnalysis", "Tracking", "Transportation", "URLShorteners", "Vehicle", "Video", "Weather"]
-const data: column[] = [
-    {
-        title: "Pingdom",
-        text: "Test Website Speed, Size and find Ways to improve your site",
-        link: "https://tools.pingdom.com/",
-    },
-    {
-        title: "Img Bot",
-        text: "Github Bot that auto optimizes your Images",
-        link: "https://imgbot.net/",
-    },
-    {
-        title: "Get Waves",
-        text: "Generate Wave pattern SVGs for sites.",
-        link: "https://getwaves.io/",
-    },
-    {
-        title: "Code Factor",
-        text: "Automatic Code Review for Github Repos",
-        link: "https://www.codefactor.io/",
-    }
-]
-const icondata: column[] = [
-    {
-        title: "IconScout",
-        text: "Millions of free icons and Assets",
-        link: "https://iconscout.com/",
-    },
-    {
-        title: "Identicon.dev",
-        text: "Royalty free Dev Icon set",
-        link: "https://identicons.dev/",
-    },
-    {
-        title: "Tabler Icons",
-        text: "1000+ Fully Customizable free SVG Icons",
-        link: "https://tablericons.com/",
-    },
-
-]
-
 function Links(props: { list: string[] }): any {
     let out = []
     for (let i = 0; i < props.list.length; i++) {
@@ -50,14 +9,36 @@ function Links(props: { list: string[] }): any {
     }
     return out
 }
+function DevTools(props: { arr: column[], type: string }): any {
+    let out: any = []
+    for (let i = 0; i < props.arr.length; i++) {
+        if (props.arr[i].type == props.type) {
+            out.push(
+                <ColumnSection
+                    link={props.arr[i].link}
+                    image={props.arr[i].image}
+                    title={props.arr[i].title}
+                    text={props.arr[i].text}
+                    key={props.arr[i].link} />)
+        }
+    }
+    return out;
+}
 export default function Main() {
     const [resMeta, setResMeta] = React.useState<column[]>([])
+    const [devTools, setDevTools] = React.useState<column[]>([])
     async function getResMeta() {
         const data = await Axios.get('/api/meta?type=resources')
         setResMeta(data.data[0].content)
     }
+    async function getDevData() {
+        const data = await Axios.get('/api/devtools')
+        setDevTools(data.data)
+    }
+
     window.onload = function () {
         getResMeta()
+        getDevData()
     }
 
     return (
@@ -68,18 +49,17 @@ export default function Main() {
                 <DisplayColumns col={resMeta} />
             </div>
             <h4>Development Tools</h4>
-            <h2>Misc</h2>
             <div id="dev" className="column-box">
-                <DisplayColumns col={data} />
+                <h2 className="full">Misc</h2>
+                <DevTools arr={devTools} type="misc" />
                 <h2 className="full">Icons</h2>
-                <DisplayColumns col={icondata} />
+                <DevTools arr={devTools} type='icons' />
             </div>
             <h4 id="api">Api Index</h4>
             <p>Curated list of over 600 Free APIs</p>
             <div className="api-links-div">
                 <Links list={indexList} />
             </div>
-
         </div>
     )
 }

@@ -40,6 +40,16 @@ class Api(models.Model):
         return self.name
 
 
+class DevTools(models.Model):
+    type = models.CharField(max_length=40, default="")
+    title = models.CharField(max_length=40, default="")
+    link = models.CharField(max_length=80, default="")
+    text = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
 class MetaContent(models.Model):
     name = models.CharField(max_length=40)
     content = models.JSONField()
