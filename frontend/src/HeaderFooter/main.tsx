@@ -1,13 +1,12 @@
 import * as React from "react";
-import { Link } from 'react-router-dom'
 function Content() {
     return (
         <div>
-            <Link to='/' className='header-link'>Home</Link>
-            <Link to='/dev' className='header-link'>Developer</Link>
-            <Link to='/student' className='header-link'>Student</Link>
-            <Link to='/dataset' className='header-link'>Datasets</Link>
-            <Link to='/about' className='header-link'>About</Link>
+            <a href='/' className='header-link'>Home</a>
+            <a href='/dev' className='header-link'>Developer</a>
+            <a href='/student' className='header-link'>Student</a>
+            <a href='/dataset' className='header-link'>Datasets</a>
+            <a href='/about' className='header-link'>About</a>
         </div>
     )
 }
@@ -22,7 +21,7 @@ export function Header() {
     return (
         <header>
             <Content />
-            <Link to='/login' className='header-link' id='header-login'>Login</Link>
+            <a href='/login' className='header-link' id='header-login'>Login</a>
         </header>
     )
 }

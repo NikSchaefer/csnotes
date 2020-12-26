@@ -1,6 +1,6 @@
 import * as React from "react";
+import Axios from 'axios'
 import { Link } from 'react-router-dom'
-import { setOfResources } from './Dev/main'
 export interface sets {
     title: string,
     path: string,
@@ -49,6 +49,15 @@ const head: column[] = [
     }
 ]
 export default function Home() {
+    const [resMeta, setResMeta] = React.useState<column[]>([])
+    async function getResMeta() {
+        const data = await Axios.get('/api/meta?type=resources')
+        setResMeta(data.data[0].content)
+    }
+    window.onload = function () {
+        getResMeta()
+    }
+
     return (
         <div>
             <div className='home-colored'>
@@ -66,7 +75,7 @@ export default function Home() {
                 <h2>Frameworks and Providers</h2>
                 <p>Compare the best Tools and frameworks to build your projects</p>
                 <div className='column-box'>
-                    <DisplayColumns col={setOfResources} />
+                    <DisplayColumns col={resMeta} />
                 </div>
                 <a href='/dev/#' className='button'>View More</a>
             </div>
