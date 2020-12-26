@@ -11,7 +11,7 @@ export interface column {
     image?: string,
     link: string,
 }
-export function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
+function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
     return (
         <a key={props.title} href={props.link} className='column-section'>
             <img alt='' src={props.image} />
@@ -75,12 +75,12 @@ export default function Home() {
                 <div>
                     <ColumnSection link="/dataset" image='/static/Images/Icons/script.svg'
                         title='Datasets' text='Test your knowledge of existing datasets of computer science topics or add your own' />
-                    <div className='full' style={{ display: 'flex' }}>
+                    <div className='full' style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <a href="/dataset" className='button-m'>View Existing Datasets</a>
                         <a href="/add" className='button-m'>Add your own</a>
                     </div>
                 </div>
-                <img style={{ width: '300px' }} className='icon' src="/static/Images/Icons/node.svg" />
+                <img id="home-data-img" className='icon' src="/static/Images/Icons/node.svg" />
             </div>
 
             <div className='column-div'>

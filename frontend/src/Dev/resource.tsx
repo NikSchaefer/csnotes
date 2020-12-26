@@ -50,7 +50,7 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
         return false
     }
     return (
-        <a href={props.array[props.iter].link} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
+        <a href={props.array[props.iter].link} key={props.array[props.iter].product} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
             <div className='option-href' style={{ width: '25%' }}>
                 <img src={props.array[props.iter].img_source} alt="" className='option-img' />
                 {props.array[props.iter].product}
@@ -63,7 +63,7 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
 function Options(props: { meta: meta, array: content[], columns: string[] }): any {
     let out = []
     for (let i: number = 0; i < props.array.length; i++) {
-        out.push(<OptionRow meta={props.meta} iter={i} array={props.array} />)
+        out.push(<OptionRow key={props.array[i].link} meta={props.meta} iter={i} array={props.array} />)
     }
     return out
 }

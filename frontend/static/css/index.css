@@ -38,6 +38,14 @@ body::-webkit-scrollbar-thumb {
     --gray: #2f3545;
 }
 
+.icon {
+    background-color: white;
+    border-radius: 100%;
+    width: 80%;
+    max-width: 150px;
+    transform: scale(1.5);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -142,8 +150,29 @@ h1 {
     background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
 }
 
+@media screen and (max-width:950px) {
+    .home-colored {
+        background: linear-gradient(0deg, transparent 15%, var(--dark-blue) 15%);
+    }
+}
+
+@media screen and (max-width:550px) {
+    .home-colored {
+        background: linear-gradient(0deg, transparent 8%, var(--dark-blue) 8%);
+    }
+}
+
 .home-colored>p {
     font-size: 30px;
+}
+
+.home-colored img {
+    margin: 0 50px;
+}
+
+#home-data-img {
+    max-width: 300px;
+    margin-top: 60px;
 }
 
 .datasets-list {
@@ -233,12 +262,6 @@ h1 {
     text-transform: capitalize;
 }
 
-.icon {
-    background-color: white;
-    border-radius: 100%;
-    transform: scale(1.5);
-}
-
 /* Page */
 
 .framework-more {
@@ -317,9 +340,16 @@ h1 {
     text-align: center;
     padding: 14px 40px;
     border-radius: 50px;
+    width: 90%;
+    max-width: 250px;
     font-size: 25px;
     outline-width: 0;
     border: rgba(0, 0, 0, 0.459) 2px solid;
+}
+
+#dict {
+    width: 90%;
+    margin: auto;
 }
 
 .about-div {
@@ -355,7 +385,7 @@ h2 {
     text-align: left;
     font-size: 18px;
     table-layout: fixed;
-    width: 90%;
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
     display: table;
