@@ -51,7 +51,7 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
     }
     return (
         <a href={props.array[props.iter].link} key={props.array[props.iter].product} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
-            <div className='option-href' style={{ width: '25%' }}>
+            <div className='option-href' style={{ width: '35%', textAlign:'right' }}>
                 <img src={props.array[props.iter].img_source} alt="" className='option-img' />
                 {props.array[props.iter].product}
             </div>
