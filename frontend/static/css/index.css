@@ -282,13 +282,18 @@ h1 {
     min-height: 73vh;
 }
 
-.legend-div {
+.option-div, .legend-div, .option-href {
     width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.legend-div {
     max-width: 600px;
     margin-bottom: 10px;
     border-bottom: gray solid 2px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .legend-div p {
@@ -297,40 +302,30 @@ h1 {
 }
 
 .option-href {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 60%;
 }
 
+.option-div p {
+    width: 20%
+}
+
 .option-div {
-    border-bottom: solid transparent 2px;
-    display: flex;
-    width: 90%;
     padding: 1% 2%;
     max-width: 300px;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-    border-radius: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
 }
 
 .option-div:hover {
     background-color: rgba(0, 0, 0, 0.089);
 }
 
-.option-type {
-    width: 20%
-}
-
 .option-img {
-    height: 60px;
     padding: 5px 0;
     margin-right: 10px;
 }
 
-.option-free-img {
+.option-div img {
     height: 60px;
 }
 

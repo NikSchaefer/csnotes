@@ -38,13 +38,13 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
         if (props.meta.columns.includes('Free Tier') || props.meta.columns.includes('Free_Tier')) {
             if (props.array[props.iter].free_tier) {
                 return [
-                    <img src="/static/Images/Free/check.svg" className='option-free-img' alt='' />,
-                    <p className='option-type'>{props.array[props.iter].free_limit}</p>
+                    <img src="/static/Images/Free/check.svg" alt='' />,
+                    <p>{props.array[props.iter].free_limit}</p>
                 ]
             }
             return [
-                <img src="/static/Images/Free/low.svg" className='option-free-img' alt='' />,
-                <p className='option-type'>N/A</p>
+                <img src="/static/Images/Free/low.svg" alt='' />,
+                <p>N/A</p>
             ]
         }
         return false
@@ -55,7 +55,7 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
                 <img src={props.array[props.iter].img_source} alt="" className='option-img' />
                 {props.array[props.iter].product}
             </div>
-            <p className='option-type'>{props.array[props.iter].product_type}</p>
+            <p>{props.array[props.iter].product_type}</p>
             {FreeImg()}
         </a>
     )
