@@ -27,6 +27,7 @@ function DevTools(props: { arr: column[], type: string }): any {
 export default function Main() {
     const [resMeta, setResMeta] = React.useState<column[]>([])
     const [devTools, setDevTools] = React.useState<column[]>([])
+
     async function getResMeta() {
         const data = await Axios.get('/api/meta?type=resources')
         setResMeta(data.data[0].content)
@@ -35,12 +36,10 @@ export default function Main() {
         const data = await Axios.get('/api/devtools')
         setDevTools(data.data)
     }
-
     window.onload = function () {
         getResMeta()
         getDevData()
     }
-
     return (
         <div className="page-div">
             <h1>Developer Tools</h1>
