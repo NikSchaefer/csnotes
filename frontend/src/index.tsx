@@ -5,8 +5,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './home'
 import { Header, Footer } from './HeaderFooter/main'
 import DatasetView from './datasets/main'
+
 import About from './about'
 import Add from './Add/main'
+import AddView from './Add/add'
+
 import Dataset from './datasets/dataset'
 import DevMain from './Dev/main'
 import Resource from './Dev/resource'
@@ -23,10 +26,11 @@ function Root() {
         <Router>
             <Header />
             <Switch>
-
-                <Route exact path='/' component={Home} />
                 <Route path='/about' component={About} />
-                <Route path='/add' component={Add} />
+
+                <Route exact path='/add' component={Add} />
+                <Route exact path='/add/' component={Add} />
+                <Route path='/add' component={AddView} />
 
                 <Route exact path='/dataset' component={DatasetView} />
                 <Route exact path='/dataset/' component={DatasetView} />
@@ -46,6 +50,7 @@ function Root() {
 
                 <Route path='/student/dictionary' component={Dict} />
                 <Route path='/student/calculator' component={Calc} />
+                <Route path='' component={Home} />
 
             </Switch>
             <Footer />
