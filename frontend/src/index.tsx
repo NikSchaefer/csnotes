@@ -6,7 +6,7 @@ import Home from './home'
 import { Header, Footer } from './HeaderFooter/main'
 import DatasetView from './datasets/main'
 import About from './about'
-import Add from './add'
+import Add from './Add/main'
 import Dataset from './datasets/dataset'
 import DevMain from './Dev/main'
 import Resource from './Dev/resource'
@@ -52,4 +52,8 @@ function Root() {
         </Router >
     )
 }
-ReactDOM.render(<Root />, document.getElementById('root'))
+ReactDOM.render(
+    <React.StrictMode>
+        <Root />
+    </React.StrictMode>,
+    document.getElementById('root'))
