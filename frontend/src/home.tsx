@@ -57,6 +57,9 @@ export default function Home() {
     }
     window.onload = function () {
         getResMeta()
+        // Axios.post('/api/post', {
+        //     title: 'send data'
+        // })
     }
 
     return (
