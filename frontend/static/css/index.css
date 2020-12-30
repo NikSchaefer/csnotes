@@ -491,3 +491,15 @@ h3 {
 .column-box a:hover {
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.151);
 }
+
+.contribute-div a {
+    font-size: 20px;
+    display: block;
+    margin: 10px 0;
+    color: var(--blue);
+    text-decoration: underline;
+}
+
+.contribute-div a:hover {
+    text-decoration: none;
+}
