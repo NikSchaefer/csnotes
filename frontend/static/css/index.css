@@ -63,7 +63,7 @@ h4 {
 .wave {
     max-width: 100%;
     transform: rotate(180deg);
-    margin-top: -380px;
+    margin-top: -370px;
     z-index: -1;
 }
 
@@ -150,13 +150,23 @@ h1 {
     background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
 }
 
+#below-wave {
+    margin-top: -200px;
+}
+
 @media screen and (max-width:950px) {
     .home-colored {
         background: linear-gradient(0deg, transparent 15%, var(--dark-blue) 15%);
     }
+    #below-wave {
+        margin-top: -100px;
+    }
 }
 
 @media screen and (max-width:550px) {
+    #below-wave {
+        margin-top: 0;
+    }
     .home-colored {
         background: linear-gradient(0deg, transparent 8%, var(--dark-blue) 8%);
     }
@@ -466,7 +476,7 @@ h3 {
     padding: 50px 0;
     width: 80%;
     max-width: 1000px;
-    margin: 100px auto;
+    margin: 40px auto;
 }
 
 .home-about {
@@ -492,7 +502,7 @@ h3 {
     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.151);
 }
 
-.contribute-div a {
+.contribute-div a, .text a {
     font-size: 20px;
     display: block;
     margin: 10px 0;
@@ -500,6 +510,10 @@ h3 {
     text-decoration: underline;
 }
 
-.contribute-div a:hover {
+.contribute-div a:hover, .text a:hover {
     text-decoration: none;
+}
+
+.text a {
+    display: inline;
 }

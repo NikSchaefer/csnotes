@@ -72,7 +72,7 @@ export default function Home() {
                 <img alt='' src="/static/Images/Icons/server.svg" className='icon' />
             </div>
             <img className='wave' src="/static/Images/Wave/Wave.svg" />
-            <div className='column-div'>
+            <div className='column-div' id='below-wave'>
                 <DisplayColumns col={head} />
             </div>
             <div>
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
 
             <div className='column-div'>
-                <h2 className='full'>Student Tools</h2>
+                <h1 className='full'>Student Tools</h1>
                 <ColumnSection link="/student" image='/static/Images/Icons/brow.svg' title='Our Tools'
                     text='We provide daily tools and resources that students' />
                 <ColumnSection link="/student" image='/static/Images/Icons/student.svg'
