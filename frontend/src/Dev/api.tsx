@@ -8,20 +8,6 @@ interface info {
     name: string,
 }
 function Table(props: { content: info[], target: string }): any {
-    function Rows(props: { arr: info[] }): any {
-        let out = []
-        for (let i = 0; i < props.arr.length; i++) {
-            out.push(
-                <tr key={props.arr[i].link}>
-                    <th><a href={props.arr[i].link}>{props.arr[i].name}</a></th>
-                    <td>{props.arr[i].description}</td>
-                    <td>{props.arr[i].Auth}</td>
-                    <td>{props.arr[i].HTTPS}</td>
-                </tr>
-            )
-        }
-        return out
-    }
     return (
         <div>
             <table className='api-table'>
@@ -34,7 +20,13 @@ function Table(props: { content: info[], target: string }): any {
                     </tr>
                 </thead>
                 <tbody>
-                    <Rows arr={props.content} />
+                    {props.content.map(data =>
+                        <tr key={data.link}>
+                            <th><a href={data.link}>{data.name}</a></th>
+                            <td>{data.description}</td>
+                            <td>{data.Auth}</td>
+                            <td>{data.HTTPS}</td>
+                        </tr>)}
                 </tbody>
             </table>
         </div>
@@ -53,9 +45,9 @@ export default function Api() {
             setContent(res.data);
         })
     }
-    window.onload = function () {
+    React.useEffect(() => {
         Load()
-    }
+    }, [])
     return (
         <div className='page-div'>
             <h1>{lastSeg} Apis</h1>,

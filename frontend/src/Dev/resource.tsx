@@ -33,13 +33,13 @@ function Legend(props: { meta: meta }) {
         </div>
     )
 }
-function OptionRow(props: { array: content[], iter: number, meta: meta }) {
+function OptionRow(props: { content: content, meta: meta }) {
     function FreeImg() {
         if (props.meta.columns.includes('Free Tier') || props.meta.columns.includes('Free_Tier')) {
-            if (props.array[props.iter].free_tier) {
+            if (props.content.free_tier) {
                 return [
                     <img src="/static/Images/Free/check.svg" alt='' />,
-                    <p>{props.array[props.iter].free_limit}</p>
+                    <p>{props.content.free_limit}</p>
                 ]
             }
             return [
@@ -50,52 +50,43 @@ function OptionRow(props: { array: content[], iter: number, meta: meta }) {
         return false
     }
     return (
-        <a href={props.array[props.iter].link} key={props.array[props.iter].product} onClick={function (e) { e.preventDefault(); window.open(props.array[props.iter].link) }} className='option-div' style={{ maxWidth: width }}>
-            <div className='option-href' style={{ width: '35%', textAlign:'right' }}>
-                <img src={props.array[props.iter].img_source} alt="" className='option-img' />
-                {props.array[props.iter].product}
+        <a href={props.content.link} key={props.content.product} onClick={function (e) { e.preventDefault(); window.open(props.content.link) }} className='option-div' style={{ maxWidth: width }}>
+            <div className='option-href' style={{ width: '35%', textAlign: 'right' }}>
+                <img src={props.content.img_source} alt="" className='option-img' />
+                {props.content.product}
             </div>
-            <p>{props.array[props.iter].product_type}</p>
+            <p>{props.content.product_type}</p>
             {FreeImg()}
         </a>
     )
 }
-function Options(props: { meta: meta, array: content[], columns: string[] }): any {
-    let out = []
-    for (let i: number = 0; i < props.array.length; i++) {
-        out.push(<OptionRow key={props.array[i].link} meta={props.meta} iter={i} array={props.array} />)
-    }
-    return out
-}
-const url = window.location.href.replace(/\/$/, '')
-const lastSeg = url.substr(url.lastIndexOf('/') + 1)
-const encoded = encodeURIComponent(lastSeg)
-
 export default function Page() {
     const [currentTool, setCurrentTool] = React.useState<content[]>([])
-    const [currentMeta, setCurrentMeta] = React.useState<meta>({product:'', columns:[]})
+    const [currentMeta, setCurrentMeta] = React.useState<meta>({ product: '', columns: [] })
 
-    async function getResource() {
-        axios.get(`/api/resources?type=${encoded}`).then(res => {
+    async function getResource(encode: string) {
+        axios.get(`/api/resources?type=${encode}`).then(res => {
             setCurrentTool(res.data)
         })
     }
-    async function getMeta() {
-        axios.get(`/api/meta?type=${encoded}`).then(res => {
+    async function getMeta(encode: string) {
+        axios.get(`/api/meta?type=${encode}`).then(res => {
             setCurrentMeta(res.data[0].content.meta)
         })
     }
+    React.useEffect(() => {
+        const url = window.location.href.replace(/\/$/, '')
+        const lastSeg = url.substr(url.lastIndexOf('/') + 1)
+        const encoded = encodeURIComponent(lastSeg)
+        getResource(encoded)
+        getMeta(encoded)
+    }, [])
 
-
-    window.onload = function () {
-        getResource()
-        getMeta()
-    }
     return (
         <div className='page-div'>
             <h1>{currentMeta.product}</h1>
             <Legend meta={currentMeta} />
-            <Options meta={currentMeta} columns={currentMeta.columns} array={currentTool} />
+            {currentTool.map(data => <OptionRow key={data.link} meta={currentMeta} content={data} />)}
             <a className='framework-more' href='/about'>Don't see certain tools? Contribute to the list</a>
             <a href="/dev" className='button'>Back to Frameworks and Providers</a>
         </div>

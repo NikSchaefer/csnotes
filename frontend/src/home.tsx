@@ -12,29 +12,6 @@ export interface column {
     link: string,
     type?: string,
 }
-export function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
-    return (
-        <a key={props.title} href={props.link} className='column-section'>
-            <img alt='' src={props.image} />
-            <h3>{props.title}</h3>
-            <p>{props.text}</p>
-        </a>
-    )
-}
-export function DisplayColumns(props: { col: column[] }): any {
-    let out = []
-    for (let i = 0; i < props.col.length; i++) {
-        out.push(
-            <ColumnSection
-                link={props.col[i].link}
-                image={props.col[i].image}
-                title={props.col[i].title}
-                text={props.col[i].text}
-                key={props.col[i].link} />
-        )
-    }
-    return out;
-}
 const head: column[] = [
     {
         title: 'Developer Resources',
@@ -49,6 +26,24 @@ const head: column[] = [
         image: '/static/Images/Icons/api.svg'
     }
 ]
+export function ColumnSection(props: { link: string, image: string, title: string, text: string }) {
+    return (
+        <a key={props.title} href={props.link} className='column-section'>
+            <img alt='' src={props.image} />
+            <h3>{props.title}</h3>
+            <p>{props.text}</p>
+        </a>
+    )
+}
+export function DisplayColumns(props: { col: column[] }): any {
+    return props.col.map(data =>
+        <ColumnSection
+            link={data.link}
+            image={data.image}
+            title={data.title}
+            text={data.text}
+            key={data.link} />);
+}
 export default function Home() {
     const [resMeta, setResMeta] = React.useState<column[]>([])
     async function getResMeta() {
@@ -67,7 +62,7 @@ export default function Home() {
                 </div>
                 <img alt='' src="/static/Images/Stock/2.png" className='stock-image' />
             </div>
-            <div className='column-div' id='below-wave'>
+            <div className='column-div'>
                 <DisplayColumns col={head} />
             </div>
             <div>
@@ -91,13 +86,18 @@ export default function Home() {
                 <img id="home-data-img" className='icon' src="/static/Images/Stock/11.png" />
             </div>
 
-            <div className='column-div'>
-                <h1 className='full'>Student Tools</h1>
-                <ColumnSection link="/student" image='/static/Images/Icons/brow.svg' title='Our Tools'
-                    text='We provide daily tools and resources that students' />
-                <ColumnSection link="/student" image='/static/Images/Icons/student.svg'
-                    title='Reccomended Tools' text="We don't have everything. View a list of reccomended Student Tools and Resources" />
-                <Link to='/student' className='button'>View Other Reccomended Tools</Link>
+            <div>
+                <h1>Student Tools</h1>
+                <div className='column-div'>
+                    <img className='stock-image' src="/static/Images/Stock/4.png" />
+                    <div>
+                        <ColumnSection link="/student" image='/static/Images/Icons/brow.svg' title='Our Tools'
+                            text='We provide daily tools and resources that students' />
+                        <ColumnSection link="/student" image='/static/Images/Icons/student.svg'
+                            title='Reccomended Tools' text="We don't have everything. View a list of reccomended Student Tools and Resources" />
+                        <Link to='/student' className='button'>Take a look</Link>
+                    </div>
+                </div>
             </div>
 
             <div className='column-div'>
@@ -111,8 +111,8 @@ export default function Home() {
                 <ColumnSection link="/about" image='' title='Contribute'
                     text='You can support this project by adding data or contributing on Github' />
                 <div className='inside'>
-                    <a href="/" className='button'>Github Source Code</a>
-                    <a href="/about" className='button'>Learn more about Our Site</a>
+                    <a href="/" className='button'>Source Code</a>
+                    <a href="/about" className='button'>Learn more</a>
                 </div>
             </div>
         </div>

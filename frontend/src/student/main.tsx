@@ -32,20 +32,13 @@ const OtherLinks: column[] = [
         link: 'https://math.microsoft.com/en'
     }
 ]
-export function ShowStudentTools(props: { arr: sets[] }): any {
-    let out: any[] = []
-    for (let i = 0; i < props.arr.length; i++) {
-        out.push(<a key={props.arr[i].title} href={`/student/${props.arr[i].path}`} className='dataset-button'>{props.arr[i].title}</a>)
-    }
-    return out
-}
 export default function Main() {
     return (
         <div className='page-div'>
             <h1>Student Tools</h1>
             <p>One place for daily student resources</p>
             <div className='datasets-list'>
-                <ShowStudentTools arr={setOfTools} />
+                {setOfTools.map(data => <a key={data.title} href={`/student/${data.path}`} className='dataset-button'>{data.title}</a>)}
             </div>
             <h2>Other Reccomended Tools</h2>
             <div className='column-box'>

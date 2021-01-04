@@ -45,10 +45,11 @@ export default function Dataset() {
             getData(-1)
         }
     }
-    window.onload = function () {
+    React.useEffect(() => {
         index = parseInt(url[url.length - 1], 10)
         getData(1)
-    }
+    }, [])
+
     return (
         <div className="page-div">
             <h1 className='capitalize'>{dataset} dataset</h1>

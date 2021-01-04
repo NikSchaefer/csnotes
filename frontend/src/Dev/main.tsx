@@ -2,13 +2,6 @@ import Axios from "axios"
 import * as React from "react"
 import { DisplayColumns, column, ColumnSection } from "../home"
 export const indexList: string[] = ["Animals", "Anti-Malware", "Art&Design", "Books", "Business", "Calendar", "CloudStorage&FileSharing", "ContinuousIntegration", "Cryptocurrency", "CurrencyExchange", "DataValidation", "Development", "Dictionaries", "Documents&Productivity", "Environment", "Events", "Finance", "Food&Drink", "Games&Comics", "Geocoding", "Government", "Health", "Jobs", "MachineLearning", "Music", "News", "OpenData", "OpenSourceProjects", "Patent", "Personality", "Photography", "Science&Math", "Security", "Shopping", "Social", "Sports&Fitness", "TestData", "TextAnalysis", "Tracking", "Transportation", "URLShorteners", "Vehicle", "Video", "Weather"]
-function Links(props: { list: string[] }): any {
-    let out = []
-    for (let i = 0; i < props.list.length; i++) {
-        out.push(<a key={props.list[i]} href={`/dev/api/${props.list[i]}`}>{props.list[i]}</a>)
-    }
-    return out
-}
 function DevTools(props: { arr: column[], type: string }): any {
     let out: any = []
     for (let i = 0; i < props.arr.length; i++) {
@@ -36,10 +29,10 @@ export default function Main() {
         const data = await Axios.get('/api/devtools')
         setDevTools(data.data)
     }
-    window.onload = function () {
+    React.useEffect(() => {
         getResMeta()
         getDevData()
-    }
+    })
     return (
         <div className="page-div">
             <h1>Developer Tools</h1>
@@ -57,7 +50,7 @@ export default function Main() {
             <h4 id="api">Api Index</h4>
             <p>Curated list of over 600 Free APIs</p>
             <div className="api-links-div">
-                <Links list={indexList} />
+                {indexList.map(data => <a key={data} href={`/dev/api/${data}`}>{data}</a>)}
             </div>
         </div>
     )
