@@ -55,13 +55,9 @@ export default function Home() {
         const data = await Axios.get('/api/meta?type=resources')
         setResMeta(data.data[0].content)
     }
-    window.onload = function () {
+    React.useEffect(() => {
         getResMeta()
-        // Axios.post('/api/post', {
-        //     title: 'send data'
-        // })
-    }
-
+    }, [])
     return (
         <div>
             <div className='home-colored'>
@@ -69,9 +65,8 @@ export default function Home() {
                     <h1>CS Notes</h1>
                     <p>A site dedicated to Computer Science Resources</p>
                 </div>
-                <img alt='' src="/static/Images/Icons/server.svg" className='icon' />
+                <img alt='' src="/static/Images/Stock/2.png" className='stock-image' />
             </div>
-            <img className='wave' src="/static/Images/Wave/Wave.svg" />
             <div className='column-div' id='below-wave'>
                 <DisplayColumns col={head} />
             </div>
@@ -93,7 +88,7 @@ export default function Home() {
                         <a href="/add" className='button-m'>Add your own</a>
                     </div>
                 </div>
-                <img id="home-data-img" className='icon' src="/static/Images/Icons/node.svg" />
+                <img id="home-data-img" className='icon' src="/static/Images/Stock/11.png" />
             </div>
 
             <div className='column-div'>

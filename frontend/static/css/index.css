@@ -60,13 +60,6 @@ h4 {
     font-size: 30px;
 }
 
-.wave {
-    max-width: 100%;
-    transform: rotate(180deg);
-    margin-top: -370px;
-    z-index: -1;
-}
-
 header, footer {
     background-color: var(--blue);
     z-index: 50;
@@ -147,29 +140,7 @@ h1 {
     height: 600px;
     color: white;
     z-index: 10;
-    background: linear-gradient(0deg, transparent 30%, var(--dark-blue) 30%);
-}
-
-#below-wave {
-    margin-top: -170px;
-}
-
-@media screen and (max-width:950px) {
-    .home-colored {
-        background: linear-gradient(0deg, transparent 15%, var(--dark-blue) 15%);
-    }
-    #below-wave {
-        margin-top: -100px;
-    }
-}
-
-@media screen and (max-width:550px) {
-    #below-wave {
-        margin-top: 0;
-    }
-    .home-colored {
-        background: linear-gradient(0deg, transparent 8%, var(--dark-blue) 8%);
-    }
+    background: linear-gradient(90deg, #3b4c9a 50%, #4257b2 50%);
 }
 
 .home-colored>p {
@@ -516,4 +487,9 @@ h3 {
 
 .text a {
     display: inline;
+}
+
+.stock-image {
+    width: 90%;
+    max-width: 500px;
 }

@@ -15,6 +15,7 @@ export function Footer() {
     return (
         <footer>
             <Content />
+            <a href="https://iconscout.com/illustration-pack/design-and-development-33" target="_blank">Design And Development Illustration Pack</a> by <a href="https://iconscout.com/contributors/delesign">Delesign Graphics</a> on <a href="https://iconscout.com">Iconscout</a>
         </footer>
     )
 }
