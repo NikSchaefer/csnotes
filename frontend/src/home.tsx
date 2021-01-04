@@ -83,13 +83,13 @@ export default function Home() {
                         <a href="/add" className='button-m'>Add your own</a>
                     </div>
                 </div>
-                <img id="home-data-img" className='icon' src="/static/Images/Stock/11.png" />
+                <img alt='' id="home-data-img" className='icon' src="/static/Images/Stock/11.png" />
             </div>
 
             <div>
                 <h1>Student Tools</h1>
                 <div className='column-div'>
-                    <img className='stock-image' src="/static/Images/Stock/4.png" />
+                    <img alt='' className='stock-image' src="/static/Images/Stock/4.png" />
                     <div>
                         <ColumnSection link="/student" image='/static/Images/Icons/brow.svg' title='Our Tools'
                             text='We provide daily tools and resources that students' />
@@ -105,7 +105,7 @@ export default function Home() {
                     <h1>Open Source!</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corrupti distinctio tempore veniam ratione exercitationem eveniet iure non in repudiandae.  ea? </p>
                 </div>
-                <img style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/Images/Icons/open.svg" />
+                <img alt='' style={{ width: "100px", margin: '0 40%' }} className='icon' src="/static/Images/Icons/open.svg" />
                 <ColumnSection link="/about" image='' title='Open Source'
                     text='As firm believers in Open Source you can find our source code below' />
                 <ColumnSection link="/about" image='' title='Contribute'
