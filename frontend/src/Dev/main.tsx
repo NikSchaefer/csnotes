@@ -32,7 +32,7 @@ export default function Main() {
     React.useEffect(() => {
         getResMeta()
         getDevData()
-    })
+    }, [])
     return (
         <div className="page-div">
             <h1>Developer Tools</h1>
